@@ -3,6 +3,11 @@ com.obsproject.Studio
 com.slack.Slack
 com.todoist.Todoist
 com.valvesoftware.Steam
+com.valvesoftware.Steam.Utility.gamescope
+com.valvesoftware.Steam.Utility.MangoHud
+com.valvesoftware.Steam.CompatibilityTool.Proton
+com.valvesoftware.Steam.CompatibilityTool.Proton-GE
+com.valvesoftware.Steam.CompatibilityTool.Proton-Exp
 com.visualstudio.code
 de.haeckerfelix.Fragments
 io.neovim.nvim

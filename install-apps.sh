@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Install applications from flathub and flathub-beta. 
-## Intended for Fedora Silverblue and openSUSE MicroOS
+## Intended for Fedora Silverblue and openSUSE MicroOS or Clear Linux
 set -ex
 [ "$UID" -eq 0 ] || { echo "This script must be run as root."; exit 1;} # Need to figure out how to pkexec so we only ask for the password once.
 
@@ -11,6 +11,14 @@ flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/fl
 grep -vE '^#' applications.list | xargs sudo /usr/bin/flatpak install flathub --assumeyes --noninteractive
 grep -vE '^#' applications-beta.list | xargs sudo /usr/bin/flatpak install flathub-beta --assumeyes --noninteractive
 
+## Overrides for flatpaks
+flatpak override --env=MANGOHUD=1 com.valvesoftware.Steam
+
+# Set this to wherever the external steam libraries will live
+# flatpak override --filesystem=/home/jorge/blah com.valvesoftware.Steam
+
+
 ## Remove Firefox from the base image
 # rpm-ostree override remove firefox
-# echo "You should reboot!"
+# swupd bundle-remove firefox
+echo "You should reboot!"
