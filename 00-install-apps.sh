@@ -20,6 +20,10 @@ systemctl enable /etc/systemd/system/flatpak-automatic.timer
 ## Remove Firefox from the base image, we're using the upstream flatpak instead
 rpm-ostree override remove firefox
 
+## Fonts
+
+cp ./files/fonts/*.ttf $HOME/.local/share/fonts/
+
 ## Add
 
 rpm-ostree install gnome-shell-extension-appindicator gnome-shell-extension-sound-output-device-chooser gnome-shell-extension-gamemode gnome-shell-extension-frippery-move-clock gnome-shell-extension-dash-to-dock gnome-shell-extension-gsconnect libratbag-ratbagd 
