@@ -12,9 +12,9 @@ gnome-extensions enable sound-output-device-chooser@kgshank.net
 
 dconf write /org/gnome/shell/favorite-apps "['org.mozilla.firefox.desktop', 'com.getmailspring.Mailspring.desktop', 'org.gnome.Nautilus.desktop', 'com.visualstudio.code.desktop', 'com.spotify.Client', 'org.signal.Signal.desktop', 'org.standardnotes.standardnotes.desktop', 'org.gnome.Software.desktop', 'org.gnome.Terminal.desktop']"
 
-dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "gnome-terminal"
-dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Primary><Alt>T'"
-dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'gnome-terminal'"
+#dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "gnome-terminal"
+#dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Primary><Alt>T'"
+#dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'gnome-terminal'"
 
 dconf write /org/gnome/desktop/app-folders/folder-children "@as []"
 dconf write /org/gnome/desktop/background/draw-background "true"
