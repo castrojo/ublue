@@ -24,9 +24,4 @@ rpm-ostree override remove firefox
 
 rpm-ostree install gnome-shell-extension-appindicator gnome-shell-extension-sound-output-device-chooser gnome-shell-extension-gamemode gnome-shell-extension-frippery-move-clock gnome-shell-extension-dash-to-dock gnome-shell-extension-gsconnect libratbag-ratbagd 
 
-dconf write /org/gnome/shell/disable-extension-version-validation "true" #yolo
-dconf write /org/gnome/shell/enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'sound-output-device-chooser@kgshank.net', 'gsconnect@andyholmes.github.io', 'Move_Clock@rmy.pobox.com']"
-
-./desktop.sh
-
 echo "You should reboot!"

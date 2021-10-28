@@ -1,3 +1,6 @@
+dconf write /org/gnome/shell/disable-extension-version-validation "true" #yolo
+dconf write /org/gnome/shell/enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'sound-output-device-chooser@kgshank.net', 'gsconnect@andyholmes.github.io', 'Move_Clock@rmy.pobox.com']"
+
 dconf write /org/gnome/desktop/app-folders/folder-children "@as []"
 dconf write /org/gnome/desktop/background/draw-background "true"
 dconf write /org/gnome/desktop/background/show-desktop-icons "true"
