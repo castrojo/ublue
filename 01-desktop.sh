@@ -1,5 +1,12 @@
 dconf write /org/gnome/shell/disable-extension-version-validation "true" #yolo
-dconf write /org/gnome/shell/enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'sound-output-device-chooser@kgshank.net', 'gsconnect@andyholmes.github.io', 'Move_Clock@rmy.pobox.com']"
+
+gnome-extensions enable Move_Clock@rmy.pobox.com
+gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
+gnome-extensions disable background-logo@fedorahosted.org
+gnome-extensions enable dash-to-dock@micxgx.gmail.com
+gnome-extensions enable gamemode@christian.kellner.me
+gnome-extensions enable gsconnect@andyholmes.github.io
+gnome-extensions enable sound-output-device-chooser@kgshank.net
 
 dconf write /org/gnome/desktop/app-folders/folder-children "@as []"
 dconf write /org/gnome/desktop/background/draw-background "true"
