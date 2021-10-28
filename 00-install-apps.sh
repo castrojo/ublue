@@ -22,7 +22,8 @@ rpm-ostree override remove firefox
 
 ## Fonts
 
-cp ./files/fonts/*.ttf $HOME/.local/share/fonts/
+mkdir -p /var/home/jorge/.local/share/fonts
+cp ./files/fonts/*.ttf /var/home/jorge/.local/share/fonts/
 
 ## Add
 
