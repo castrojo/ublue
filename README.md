@@ -38,7 +38,7 @@ This is not a distro, so no patches, etc, basically looking at the default setup
 
 ## Instructions
 
-1. Install [Fedora Silverblue](https://docs.fedoraproject.org/en-US/fedora-silverblue/installation/)
+1. Install [Fedora Silverblue](https://docs.fedoraproject.org/en-US/fedora-silverblue/installation/) - probably don't do this on a lived in machine, just browse the repo and cherry pick
 1. On first boot, clone this repo: `git clone https://github.com/castrojo/ublue.git`
 1. `cd ublue`
 1. `./00-install-apps.sh`
@@ -46,6 +46,11 @@ This is not a distro, so no patches, etc, basically looking at the default setup
 1. Run `./01-desktop.sh`
 
 This script is terrible, it's written wrong, it doesn't check for anything properly, somethings still don't work, it basically a history file saved in a file. Make something better, turn on github sponsors, and I'll be the first one sending you money on the regular. Bring the cloud native dream to the people. Just please, for the love of all that is holy, don't make another distro. 
+
+To revert (and I mean, totally revert, you've been warned):
+
+1. `dconf reset -f /`
+1. `rpm-ostree reset` then reboot
 
 ## Todo
 
