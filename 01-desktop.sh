@@ -1,10 +1,10 @@
 dconf write /org/gnome/shell/disable-extension-version-validation "true" #yolo
+dconf write /org/gnome/shell/disable-user-extensions "false"
 
 gnome-extensions enable Move_Clock@rmy.pobox.com
 gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
 gnome-extensions disable background-logo@fedorahosted.org
 gnome-extensions enable dash-to-dock@micxgx.gmail.com
-gnome-extensions enable gamemode@christian.kellner.me
 gnome-extensions enable gsconnect@andyholmes.github.io
 gnome-extensions enable sound-output-device-chooser@kgshank.net
 
