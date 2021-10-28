@@ -11,14 +11,17 @@ flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/fl
 grep -vE '^#' applications.list | xargs sudo /usr/bin/flatpak install flathub --assumeyes --noninteractive
 grep -vE '^#' applications-beta.list | xargs sudo /usr/bin/flatpak install flathub-beta --assumeyes --noninteractive
 
-## Overrides for flatpaks
-flatpak override --env=MANGOHUD=1 com.valvesoftware.Steam
+sudo cp ./files/flatpak-automatic.service /etc/systemd/system
+sudo cp ./files/flatpak-automatic.timer /etc/systemd/system
+sudo cp ./files/rpm-ostreed.conf /etc/
+systemctl daemon-reload
+systemctl enable /etc/systemd/system/flatpak-automatic.timer
 
-# Set this to wherever the external steam libraries will live
-# flatpak override --filesystem=/home/jorge/blah com.valvesoftware.Steam
+## Remove Firefox from the base image, we're using the upstream flatpak instead
+rpm-ostree override remove firefox
 
+## Add
 
-## Remove Firefox from the base image
-# rpm-ostree override remove firefox
-# swupd bundle-remove firefox
+rpm-ostree install gnome-shell-extension-appindicator gnome-shell-extension-sound-output-device-chooser gnome-shell-extension-gamemode gnome-shell-extension-frippery-move-clock gnome-shell-extension-dash-to-dock gnome-shell-extension-gsconnect libratbag-ratbagd 
+
 echo "You should reboot!"
