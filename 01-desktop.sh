@@ -10,7 +10,7 @@ gnome-extensions enable dash-to-dock@micxgx.gmail.com
 gnome-extensions enable gsconnect@andyholmes.github.io
 gnome-extensions enable sound-output-device-chooser@kgshank.net
 
-dconf write /org/gnome/shell/favorite-apps "['org.mozilla.firefox.desktop', 'com.getmailspring.Mailspring.desktop', 'org.gnome.Nautilus.desktop', 'com.visualstudio.code.desktop', 'org.signal.Signal.desktop', 'org.standardnotes.standardnotes.desktop', 'org.gnome.Software.desktop', 'org.gnome.Terminal.desktop']"
+dconf write /org/gnome/shell/favorite-apps "['org.mozilla.firefox.desktop', 'com.getmailspring.Mailspring.desktop', 'org.gnome.Nautilus.desktop', 'com.visualstudio.code.desktop', 'com.spotify.Cllient', 'org.signal.Signal.desktop', 'org.standardnotes.standardnotes.desktop', 'org.gnome.Software.desktop', 'org.gnome.Terminal.desktop']"
 
 dconf write /org/gnome/desktop/app-folders/folder-children "@as []"
 dconf write /org/gnome/desktop/background/draw-background "true"
