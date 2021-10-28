@@ -1,13 +1,17 @@
 #/bin/bash
 set -eux
-dconf write /org/gnome/shell/disable-extension-version-validation "true"
+dconf write /org/gnome/shell/disable-extension-version-validation "true" #yolo
 dconf write /org/gnome/shell/disable-user-extensions "false"
+
 gnome-extensions enable Move_Clock@rmy.pobox.com
 gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
 gnome-extensions disable background-logo@fedorahosted.org
 gnome-extensions enable dash-to-dock@micxgx.gmail.com
 gnome-extensions enable gsconnect@andyholmes.github.io
 gnome-extensions enable sound-output-device-chooser@kgshank.net
+
+dconf write /org/gnome/shell/favorite-apps "['org.mozilla.firefox.desktop', 'com.getmailspring.Mailspring.desktop', 'org.gnome.Nautilus.desktop', 'com.visualstudio.code.desktop', 'org.signal.Signal.desktop', 'org.standardnotes.standardnotes.desktop', 'org.gnome.Software.desktop', 'org.gnome.Terminal.desktop']"
+
 dconf write /org/gnome/desktop/app-folders/folder-children "@as []"
 dconf write /org/gnome/desktop/background/draw-background "true"
 dconf write /org/gnome/desktop/background/show-desktop-icons "true"
