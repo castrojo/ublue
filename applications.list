@@ -4,7 +4,6 @@ com.slack.Slack
 com.todoist.Todoist
 com.visualstudio.code
 de.haeckerfelix.Fragments
-io.neovim.nvim
 org.audacityteam.Audacity
 org.freedesktop.Platform.ffmpeg-full/x86_64/20.08
 org.gimp.GIMP
@@ -22,3 +21,9 @@ org.flameshot.Flameshot
 org.freedesktop.Piper
 org.gustavoperedo.FontDownloader
 com.github.tchx84.Flatseal
+com.getmailspring.Mailspring
+com.belmoussaoui.Obfuscate
+com.spotify.Client
+org.gnome.Dejadup
+org.gustavoperedo.FontDownloader
+
