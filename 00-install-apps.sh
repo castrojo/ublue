@@ -17,12 +17,11 @@ install_flatpak_remote () {
     return 0
 }
 
-get_ostree_state () {
-    return $(rpm-ostree status| grep ^State | awk '{print $2}')
+is_ostree_idle () {
+    # TODO: There's probably a cleaner way to do this.
+    return $(rpm-ostree status| grep ^State | grep idle > /dev/null)
 }
 
-# flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-# flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
 
 install_flatpak_remote flathub https://flathub.org/repo/flathub.flatpakrepo
 
@@ -35,9 +34,11 @@ install_flatpak_remote flathub-beta https://flathub.org/beta-repo/flathub-beta.f
 grep -vE '^#' applications.list | xargs sudo /usr/bin/flatpak install flathub --assumeyes --noninteractive
 grep -vE '^#' applications-beta.list | xargs sudo /usr/bin/flatpak install flathub-beta --assumeyes --noninteractive
 
+# TODO: Maybe only do this if the file doesn't exist, or it does but it's diff than our file?
 sudo cp ./files/flatpak-automatic.service /etc/systemd/system
 sudo cp ./files/flatpak-automatic.timer /etc/systemd/system
 sudo cp ./files/rpm-ostreed.conf /etc/
+
 systemctl daemon-reload
 systemctl enable /etc/systemd/system/flatpak-automatic.timer
 
@@ -47,7 +48,7 @@ systemctl enable /etc/systemd/system/flatpak-automatic.timer
 
 # Hack: using || true to suffocate an error if an override already exists.
 # there should be a better way to do this.
-while [ get_ostree_state != "idle" ]; do
+while ! is_ostree_idle; do
     echo "Waiting for rpm-ostree..."
     sleep 5
 done
