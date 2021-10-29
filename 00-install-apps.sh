@@ -53,7 +53,9 @@ while ! is_ostree_idle; do
     sleep 5
 done
 
-rpm-ostree override remove firefox || true
+if [ ! $(rpm-ostree override remove firefox) ]; then
+    echo "Removed Firefox from base layer."
+fi
 
 # + rpm-ostree override remove firefox
 # error: Transaction in progress: upgrade (download only)
@@ -65,8 +67,7 @@ rpm-ostree override remove firefox || true
 ## Add
 
 # TODO: pull these from an external list?
-
-
+# --idempotent seems to fix running this multiple times
 rpm-ostree --idempotent install gnome-shell-extension-appindicator gnome-shell-extension-sound-output-device-chooser gnome-shell-extension-gamemode gnome-shell-extension-frippery-move-clock gnome-shell-extension-dash-to-dock gnome-shell-extension-gsconnect libratbag-ratbagd gnome-tweaks
 
 
