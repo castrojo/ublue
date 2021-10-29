@@ -1,7 +1,7 @@
 #!/bin/bash
 ## Install applications from flathub and flathub-beta. 
 ## Intended for Fedora Silverblue and openSUSE MicroOS or Clear Linux
-set -ex
+set -eux
 
 [ "$UID" -eq 0 ] || { echo "This script must be run as root."; exit 1;} # Need to figure out how to pkexec so we only ask for the password once.
 
@@ -26,13 +26,19 @@ is_ostree_idle () {
 install_flatpak_remote flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # TODO: Prompt to enable beta repo?
-install_flatpak_remote flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
-
+read -p "Do you wish to use Flathub beta? (Y/n) " beta
+if [ $beta =~ ^[Yy]$ ]; then
+    install_flatpak_remote flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+fi
 
 # TODO: This will fail if there are no applications to install, i.e., an empty list
 ## Ignore a line if it starts with # so you can leave yourself notes
 grep -vE '^#' applications.list | xargs sudo /usr/bin/flatpak install flathub --assumeyes --noninteractive
-grep -vE '^#' applications-beta.list | xargs sudo /usr/bin/flatpak install flathub-beta --assumeyes --noninteractive
+
+# TODO: don't check beta twice
+if [ $beta =~ ^[Yy]$ ]; then
+    grep -vE '^#' applications-beta.list | xargs sudo /usr/bin/flatpak install flathub-beta --assumeyes --noninteractive
+fi
 
 # TODO: Maybe only do this if the file doesn't exist, or it does but it's diff than our file?
 sudo cp ./files/flatpak-automatic.service /etc/systemd/system
