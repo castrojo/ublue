@@ -5,6 +5,19 @@ set -ex
 
 [ "$UID" -eq 0 ] || { echo "This script must be run as root."; exit 1;} # Need to figure out how to pkexec so we only ask for the password once.
 
+install_flatpak_remote () {
+    flatpak remote-add --if-not-exists $1 $2
+
+    # TODO: Verify that the remote is setup
+    # /var/lib/flatpak/repo/flathub.trustedkeys.gpg
+    if [ ! -f "/var/lib/flatpak/repo/$1.trustedkeys.gpg" ]; then
+        echo "Unable to verify public key"
+        return 1
+    fi
+    return 0
+}
+
+
 # flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 # flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
 
@@ -36,14 +49,3 @@ echo "You should reboot!"
 
 exit 0;
 
-install_flatpak_remote () {
-    flatpak remote-add --if-not-exists $1 $2
-
-    # TODO: Verify that the remote is setup
-    # /var/lib/flatpak/repo/flathub.trustedkeys.gpg
-    if [ ! -f "/var/lib/flatpak/repo/$1.trustedkeys.gpg" ]; then
-        echo "Unable to verify public key"
-        return 1
-    fi
-    return 0
-}
