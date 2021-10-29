@@ -53,16 +53,9 @@ while ! is_ostree_idle; do
     sleep 5
 done
 
-if [ $(rpm-ostree override remove firefox) ]; then
+if [ $(rpm-ostree override remove firefox > /dev/null) ]; then
     echo "Removed Firefox from base layer."
 fi
-
-# + rpm-ostree override remove firefox
-# error: Transaction in progress: upgrade (download only)
-#  You can cancel the current transaction with `rpm-ostree cancel`
-
-# $ rpm-ostree status
-# State: busy
 
 ## Add
 
