@@ -53,7 +53,7 @@ while ! is_ostree_idle; do
     sleep 5
 done
 
-if [ ! $(rpm-ostree override remove firefox) ]; then
+if [ $(rpm-ostree override remove firefox) ]; then
     echo "Removed Firefox from base layer."
 fi
 
