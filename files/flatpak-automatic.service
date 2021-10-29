@@ -1,8 +1,12 @@
 [Unit]
 Description=flatpak Automatic Update
 Documentation=man:flatpak(1)
+Wants=network-online.target
+After=network-online.target
 
 [Service]
-Type=simple
-ExecStartPre=/bin/sh -c 'until ping -c1 google.com; do sleep 5; done;'
+Type=oneshot
 ExecStart=/usr/bin/flatpak update -y
+
+[Install]
+WantedBy=multi-user.target
