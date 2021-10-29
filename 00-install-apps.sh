@@ -47,7 +47,7 @@ systemctl enable /etc/systemd/system/flatpak-automatic.timer
 
 # Hack: using || true to suffocate an error if an override already exists.
 # there should be a better way to do this.
-while [get_ostree_state != "idle" ]; do
+while [ get_ostree_state != "idle" ]; do
     echo "Waiting for rpm-ostree..."
     sleep 5
 done
