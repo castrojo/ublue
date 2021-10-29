@@ -40,7 +40,7 @@ This is not a distro, so no patches, etc, basically looking at the default setup
 
 ## Instructions
 
-1. Install [Fedora Silverblue](https://docs.fedoraproject.org/en-US/fedora-silverblue/installation/) - probably don't do this on a lived in machine, just browse the repo and cherry pick
+1. Install [Fedora Silverblue](https://docs.fedoraproject.org/en-US/fedora-silverblue/installation/) - probably don't do this on an existing system, just browse the repo and cherry pick if you're interested. 
 1. On first boot, clone this repo: `git clone https://github.com/castrojo/ublue.git`
 1. `cd ublue`
 1. `./00-install-apps.sh`
