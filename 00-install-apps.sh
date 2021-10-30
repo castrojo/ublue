@@ -1,7 +1,7 @@
 #!/bin/bash
 ## Install applications from flathub and flathub-beta. 
 ## Intended for Fedora Silverblue and openSUSE MicroOS or Clear Linux
-set -eux
+set -eu
 
 [ "$UID" -eq 0 ] || { echo "This script must be run as root."; exit 1;} # Need to figure out how to pkexec so we only ask for the password once.
 
