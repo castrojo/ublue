@@ -62,6 +62,7 @@ flatpak_install () {
     done | progressbar
 }
 
+echo "Installing Flatpak(s)..."
 flatpak_install_remote flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak_install flathub applications.list
 
@@ -86,7 +87,7 @@ esac
 #         grep -vE '^#' applications-beta.list | xargs sudo /usr/bin/flatpak install flathub-beta --assumeyes --noninteractive
 # esac
 
-
+echo "Configuring Flatpak automatic upgrades..."
 # TODO: Maybe only do this if the file doesn't exist, or it does but it's diff than our file?
 sudo cp ./files/flatpak-automatic.service /etc/systemd/system
 sudo cp ./files/flatpak-automatic.timer /etc/systemd/system
@@ -101,6 +102,7 @@ systemctl enable /etc/systemd/system/flatpak-automatic.timer
 
 # Hack: using || true to suffocate an error if an override already exists.
 # there should be a better way to do this.
+echo "Checking base layer..."
 while ! is_ostree_idle; do
     echo "Waiting for rpm-ostree..."
     sleep 5
@@ -114,11 +116,8 @@ fi
 
 # TODO: pull these from an external list?
 # --idempotent seems to fix running this multiple times
+echo "Installing layered packages..."
 rpm-ostree --idempotent install gnome-shell-extension-appindicator gnome-shell-extension-sound-output-device-chooser gnome-shell-extension-gamemode gnome-shell-extension-frippery-move-clock gnome-shell-extension-dash-to-dock gnome-shell-extension-gsconnect libratbag-ratbagd gnome-tweaks
-
-
-# + rpm-ostree install gnome-shell-extension-appindicator gnome-shell-extension-sound-output-device-chooser gnome-shell-extension-gamemode gnome-shell-extension-frippery-move-clock gnome-shell-extension-dash-to-dock gnome-shell-extension-gsconnect libratbag-ratbagd gnome-tweaks
-# error: Timeout was reached
 
 
 echo "You should reboot!"
