@@ -43,6 +43,7 @@ This is not a distro, so no patches, etc, basically looking at the default setup
 1. Install [Fedora Silverblue](https://docs.fedoraproject.org/en-US/fedora-silverblue/installation/) - probably don't do this on an existing system, just browse the repo and cherry pick if you're interested. 
 1. On first boot, clone this repo: `git clone https://github.com/castrojo/ublue.git`
 1. `cd ublue`
+1. Edit the `applications.list` and `applications-beta.list` files to your liking.
 1. `./00-install-apps.sh`
 1. Get a coffee, and then reboot your computer (Important!)
    - Read the [toolbox documentation](https://docs.fedoraproject.org/en-US/fedora-silverblue/toolbox/) and [README](https://github.com/containers/toolbox#readme), this will be useful later on. 
@@ -52,8 +53,7 @@ This script is terrible, it's written wrong, it doesn't check for anything prope
 
 To revert (and I mean, totally revert, you've been warned):
 
-1. `dconf reset -f /`
-1. `rpm-ostree reset` then reboot
+1. `./reset` will reset the dconf database and ostree back to defaults and reboot you back to the stock Fedora experience. 
 
 ## Todo
 
@@ -71,4 +71,4 @@ To revert (and I mean, totally revert, you've been warned):
 - "Marco" @mrckndt for the original playbook, check it out here: https://github.com/mrckndt/silverblue-playbook
 - Colin Walters and the rest of the Fedora Silverblue Team
 - Richard Brown and the rest of the MicroOS team
-- Josh Berkus, Wayne Witzel, Marco Ceppi, Martin Wimpress, Alan Pope, and Bob Killen for idea bouncing, putting up with my rambling, rando dconf tips, etc.
+- Josh Berkus, Wayne Witzel, Marco Ceppi, Martin Wimpress, Alan Pope, Justin Garrisson, Adam Israel, Aaron Lake, and Bob Killen for idea bouncing, putting up with my rambling, rando dconf tips, etc.
