@@ -70,6 +70,7 @@ flatpak_install flathub applications.list
 read -n 1 -p "Do you wish to use Flathub beta? (Y/n) " beta
 case $beta in
     [Yy]* ) 
+        echo ""
         flatpak_install_remote flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
         flatpak_install flathub-beta applications-beta.list
 
