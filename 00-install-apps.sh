@@ -8,8 +8,7 @@ set -eu
 flatpak_install_remote () {
     flatpak remote-add --if-not-exists $1 $2
 
-    # TODO: Verify that the remote is setup
-    # /var/lib/flatpak/repo/flathub.trustedkeys.gpg
+    # Verify that the remote is setup
     if [ ! -f "/var/lib/flatpak/repo/$1.trustedkeys.gpg" ]; then
         echo "Unable to verify public key"
         return 1
@@ -20,12 +19,6 @@ flatpak_install_remote () {
 is_ostree_idle () {
     # TODO: There's probably a cleaner way to do this.
     return $(rpm-ostree status| grep ^State | grep idle > /dev/null)
-}
-
-prompt () {
-    # Prompt the user and use the return code to indicate response
-    read -n 1 -p "Do you wish to use Flathub beta? (Y/n) " beta
-
 }
 
 # http://mywiki.wooledge.org/BashFAQ/044
@@ -66,27 +59,13 @@ echo "Installing Flatpak(s)..."
 flatpak_install_remote flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak_install flathub applications.list
 
-# TODO: Prompt to enable beta repo?
 read -n 1 -p "Do you wish to use Flathub beta? (Y/n) " beta
+echo ""
 case $beta in
     [Yy]* ) 
-        echo ""
         flatpak_install_remote flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
         flatpak_install flathub-beta applications-beta.list
-
 esac
-
-
-# TODO: This will fail if there are no applications to install, i.e., an empty list
-
-# ## Ignore a line if it starts with # so you can leave yourself notes
-# grep -vE '^#' applications.list | xargs sudo /usr/bin/flatpak install flathub --assumeyes --noninteractive
-
-# # TODO: don't check beta twice
-# case $beta in
-#     [Yy]* ) 
-#         grep -vE '^#' applications-beta.list | xargs sudo /usr/bin/flatpak install flathub-beta --assumeyes --noninteractive
-# esac
 
 echo "Configuring Flatpak automatic upgrades..."
 # TODO: Maybe only do this if the file doesn't exist, or it does but it's diff than our file?
