@@ -1,5 +1,9 @@
 #/bin/bash
 set -eux
+
+# Don't run this script as root
+[ ! "$UID" -eq 0 ] || { echo "This script must be run not be run as root."; exit 1;}
+
 dconf write /org/gnome/shell/disable-extension-version-validation "true" #yolo
 dconf write /org/gnome/shell/disable-user-extensions "false"
 
