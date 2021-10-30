@@ -5,7 +5,7 @@ set -eux
 
 [ "$UID" -eq 0 ] || { echo "This script must be run as root."; exit 1;} # Need to figure out how to pkexec so we only ask for the password once.
 
-install_flatpak_remote () {
+flatpak_install_remote () {
     flatpak remote-add --if-not-exists $1 $2
 
     # TODO: Verify that the remote is setup
@@ -22,26 +22,69 @@ is_ostree_idle () {
     return $(rpm-ostree status| grep ^State | grep idle > /dev/null)
 }
 
+prompt () {
+    # Prompt the user and use the return code to indicate response
+    read -n 1 -p "Do you wish to use Flathub beta? (Y/n) " beta
 
-install_flatpak_remote flathub https://flathub.org/repo/flathub.flatpakrepo
+}
+
+# http://mywiki.wooledge.org/BashFAQ/044
+progressbar() {
+    local max=$((${COLUMNS:-$(tput cols)} - 2)) in n i
+    while read -r in; do
+        n=$((max*in/100))
+        printf '\r['
+        for ((i=0; i<n; i++)); do printf =; done
+        for ((; i<max; i++)); do printf ' '; done
+        printf ']'
+    done
+}
+
+flatpak_install () {
+    # Test reading in the list of apps to install and create a progress bar
+    mapfile -t applications < $2
+
+    # Remove empty lines and commented out lines
+    for i in ${!applications[@]};do
+        name=$(echo -e "${applications[$i]}" | sed -e 's/[[:space:]]*$//')
+        if [[ $name == "" || $name == \#* ]]; then
+            unset applications[$i]
+        fi 
+    done
+
+    length=${#applications[@]}
+    echo "Installing $length applications from $1..."
+
+    i=0
+    for application in "${applications[@]}"; do
+        echo "$((100*(++i)/length))"
+        /usr/bin/flatpak install $1 --assumeyes --noninteractive $application
+    done | progressbar
+}
+
+flatpak_install_remote flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak_install flathub applications.list
 
 # TODO: Prompt to enable beta repo?
 read -n 1 -p "Do you wish to use Flathub beta? (Y/n) " beta
 case $beta in
     [Yy]* ) 
-        install_flatpak_remote flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+        flatpak_install_remote flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+        flatpak_install flathub-beta applications-beta.list
+
 esac
 
 
 # TODO: This will fail if there are no applications to install, i.e., an empty list
-## Ignore a line if it starts with # so you can leave yourself notes
-grep -vE '^#' applications.list | xargs sudo /usr/bin/flatpak install flathub --assumeyes --noninteractive
 
-# TODO: don't check beta twice
-case $beta in
-    [Yy]* ) 
-        grep -vE '^#' applications-beta.list | xargs sudo /usr/bin/flatpak install flathub-beta --assumeyes --noninteractive
-esac
+# ## Ignore a line if it starts with # so you can leave yourself notes
+# grep -vE '^#' applications.list | xargs sudo /usr/bin/flatpak install flathub --assumeyes --noninteractive
+
+# # TODO: don't check beta twice
+# case $beta in
+#     [Yy]* ) 
+#         grep -vE '^#' applications-beta.list | xargs sudo /usr/bin/flatpak install flathub-beta --assumeyes --noninteractive
+# esac
 
 
 # TODO: Maybe only do this if the file doesn't exist, or it does but it's diff than our file?
