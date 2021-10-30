@@ -45,12 +45,12 @@ flatpak_install () {
         fi 
     done
 
-    length=${#applications[@]}
-    echo "Installing $length applications from $1..."
+    n=${#applications[@]}
+    echo "Installing $n applications from $1..."
 
     i=0
     for application in "${applications[@]}"; do
-        echo "$((100*(++i)/length))"
+        echo "$((100*(++i)/n))"
         /usr/bin/flatpak install $1 --assumeyes --noninteractive --or-update $application
     done | progressbar
 }
