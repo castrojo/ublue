@@ -53,7 +53,16 @@ This script is terrible, it's written wrong, it doesn't check for anything prope
 
 To revert (and I mean, totally revert, you've been warned):
 
-1. `./reset` will reset the dconf database and ostree back to defaults and reboot you back to the stock Fedora experience. 
+1. `./reset.sh` will reset the dconf database and ostree back to defaults and reboot you back to the stock Fedora experience. 
+
+### Installing a toolbox
+
+By default doing `toolbox enter` will prompt you to create a Fedora container and take you inside. This works fine and even installing graphical applications works! 
+
+- `./files/build-debian-toolbox.sh` will build a bullseye container
+- `./files/build-ubuntu-toolbox.sh` will build an ubuntu container, however there are some problems where the systemd package does not work, so installing anything that pulls in that package breaks. Fixing this is beyong my skill level but including the script anyway. 
+
+You can then do `toolbox enter bullseye` or `toolbox enter jammy-22.04_edge` to go into the toolboxes. If you set the toolboxes to launch on gnome-terminal execution you can have a more seamless experience:  
 
 ## Todo
 
