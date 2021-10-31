@@ -11,6 +11,8 @@ This POC is using Silverblue, but do check out [openSUSE's MicroOS](https://micr
 
 ## Features
 
+:heart: :heart: :heart: WARNING: You are changing system defaults and pushing more into the container land than usual, please be respectful of our OSS family and be thoughtful before filing issues with either Fedora or the maintainers of the cloud images. Thanks! 
+
 [@mrckndt's playbook](https://github.com/mrckndt/silverblue-playbook) comes with some nice features that fit with our flow:
 
 - rpm-ostree is set to stage updates by default, so it just does it automatically.
@@ -60,12 +62,19 @@ To revert (and I mean, totally revert, you've been warned):
 By default doing `toolbox enter` will prompt you to create a Fedora container and take you inside. This works fine and even installing graphical applications works! 
 
 - `./files/build-debian-toolbox.sh` will build a bullseye container
-- `./files/build-ubuntu-toolbox.sh` will build an ubuntu container, however there are some problems where the systemd package does not work, so installing anything that pulls in that package breaks. Fixing this is beyong my skill level but including the script anyway. 
+- `./files/build-ubuntu-toolbox.sh` will build an ubuntu container, however this is broken.
 
-You can then do `toolbox enter bullseye` or `toolbox enter jammy-22.04_edge` to go into the toolboxes. If you set the toolboxes to launch on gnome-terminal execution you can have a more seamless experience:  
+@jmennius has kindly built a 20.04 container, thanks! Let's use that for now:
+
+    toolbox create --image registry.hub.docker.com/jmennius/ubuntu-toolbox:20.04 ubuntu
+
+You can then do `toolbox enter ubuntu` to go into the toolbox. Future versions of these scripts will build an image for you as part of the installation process so you can verify it and add custom packages. If you set the toolboxes to launch on gnome-terminal execution you can have a more seamless experience:  
 
 ![toolbox](https://user-images.githubusercontent.com/1264109/139595535-fd1b8955-1b4a-4b70-ac9b-a4287c590cfb.png)
 
+See the [Fedora documentation on keyboard shortcuts](https://docs.fedoraproject.org/en-US/quick-docs/proc_setting-key-shortcut/) to assign the terminals to shortcuts. A rememberable one would be to keep `Ctrl-Alt-T` as the default non-toolbox terminal so you can do host things, and then `Ctrl-Alt-U` for the terminal that executes `toolbox enter ubuntu`. The U stands for Ubuntu :smile: Over time you may find yourself needing the host terminal less and less, expect to be very dependent on it if you're new. 
+
+NOTE: Graphical versions of applications WORK in these containers, so if there's an app you need in Ubuntu that is not in Fedora or something then apt install it and fire it up! 
 
 ## Todo
 
