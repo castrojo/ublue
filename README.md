@@ -64,6 +64,9 @@ By default doing `toolbox enter` will prompt you to create a Fedora container an
 
 You can then do `toolbox enter bullseye` or `toolbox enter jammy-22.04_edge` to go into the toolboxes. If you set the toolboxes to launch on gnome-terminal execution you can have a more seamless experience:  
 
+![toolbox](https://user-images.githubusercontent.com/1264109/139595535-fd1b8955-1b4a-4b70-ac9b-a4287c590cfb.png)
+
+
 ## Todo
 
 - https://github.com/containers/toolbox is crucial to this.
