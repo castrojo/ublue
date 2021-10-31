@@ -25,7 +25,7 @@ echo force-unsafe-io > /etc/dpkg/dpkg.cfg.d/unsafe-io
 sed -i "s/deb.debian.org/cloudfront.debian.net/; /^deb\b/ { p; s/^deb/deb-src/ }" /etc/apt/sources.list
 
 apt-get update
-apt-get install -y libnss-myhostname sudo eatmydata libcap2-bin dialog
+apt-get install -y libnss-myhostname sudo eatmydata libcap2-bin dialog ssh
 
 # allow sudo with empty password
 sed -i "s/nullok_secure/nullok/" /etc/pam.d/common-auth
