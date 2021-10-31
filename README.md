@@ -16,7 +16,7 @@ This POC is using Silverblue, but do check out [openSUSE's MicroOS](https://micr
 [@mrckndt's playbook](https://github.com/mrckndt/silverblue-playbook) comes with some nice features that fit with our flow:
 
 - rpm-ostree is set to stage updates by default, so it just does it automatically.
-- systemd service units to update all the flatpaks by default once a day.
+- systemd service units to update all the flatpaks four times a day to match the update cadence of Ubuntu 
 
 If this scares you then you're in the wrong place, if you're ready to not only burn the ships but torpedo them just to make sure we don't end up back in the old world, read on. I have selected a default set of apps that I use that I notice lots of other people use, feel free to change them up, it's only a default:
 
