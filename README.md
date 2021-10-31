@@ -7,7 +7,8 @@ TLDR: I've been using Ubuntu since 2004, however I want a [modern image based de
 This is a proof-of-concept, ideally it's enough to get gears turning and starting conversations, it is by no means a a proper implementation. 
 This POC is using Silverblue, but do check out [openSUSE's MicroOS](https://microos.opensuse.org/), alternative implementations of similar ideas is always a good idea. 
 
-![itsjustfedora](https://user-images.githubusercontent.com/1264109/139354625-e7873bb6-c2f4-4c73-9253-23f8432c8a49.png)
+![Tada](https://user-images.githubusercontent.com/1264109/139602527-6f2135e5-a035-49e7-b716-2ed9e57dfc68.png)
+
 
 ## Features
 
