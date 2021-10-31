@@ -1,6 +1,6 @@
 # ublue - Fedora Silverblue for Ubuntu Users
 
-TLDR: I've been using Ubuntu since 2004, however I want a [modern image based desktop](https://blog.verbum.org/2020/08/22/immutable-%E2%86%92-reprovisionable-anti-hysteresis/). Can I have my cake and eat it too? This is not a new distribution (whew!), just a different set of defaults. 
+TLDR: I've been using Ubuntu since 2004, however I want a [modern image based desktop](https://blog.verbum.org/2020/08/22/immutable-%E2%86%92-reprovisionable-anti-hysteresis/). Can I have my cake and eat it too? This is not a new distribution (whew!), just a different set of defaults and apps scripted up, with a dash of container goodies so can still also use Ubuntu. 
 
 ## Scope
 
