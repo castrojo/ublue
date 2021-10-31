@@ -60,6 +60,8 @@ To revert (and I mean, totally revert, you've been warned):
 
 ### Installing a toolbox
 
+[Toolbox](https://github.com/containers/toolbox) is a neat tool that lets you run Linux distro cloud containers and then enter into them. The neater magic is it also transparently mounts your home directory for you, so we'll use an Ubuntu cloud image as our "userspace" in a terminal, similar to the how WSL does it. This enables us to bring all our old scripts, dotfiles with us into this new workflow, we want to be more efficient not force reset your unix brain. 
+
 By default doing `toolbox enter` will prompt you to create a Fedora container and take you inside. This works fine and even installing graphical applications works! 
 
 - `./files/build-debian-toolbox.sh` will build a bullseye container
