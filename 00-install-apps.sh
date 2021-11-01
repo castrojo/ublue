@@ -77,7 +77,7 @@ sudo cp ./files/rpm-ostreed.conf /etc/
 
 systemctl daemon-reload
 systemctl enable /etc/systemd/system/flatpak-automatic.timer
-
+systemctl enable /etc/systemd/system/rpm-ostreed-automatic.timer
 
 # TODO: This fails if we're re-running the script and the override is already in place
 ## Remove Firefox from the base image, we're using the upstream flatpak instead
