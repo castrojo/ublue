@@ -16,12 +16,14 @@ org.freedesktop.Platform.ffmpeg-full/x86_64/20.08
 org.gimp.GIMP
 org.gnome.Dejadup
 org.gnome.Extensions
+org.gnome.Rhythmbox3
 org.gnome.Shotwell
 org.gustavoperedo.FontDownloader
 org.inkscape.Inkscape
 org.kde.krita
 org.libreoffice.LibreOffice
 org.mozilla.firefox
+org.mozilla.Thunderbird
 org.signal.Signal
 org.standardnotes.standardnotes
 org.videolan.VLC
