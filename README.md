@@ -9,6 +9,8 @@ This POC is using Silverblue, but do check out [openSUSE's MicroOS](https://micr
 
 ![Tada](https://user-images.githubusercontent.com/1264109/139602527-6f2135e5-a035-49e7-b716-2ed9e57dfc68.png)
 
+If you want a more in depth view of what's happening, here's a [live video of me convincing Marco to try this](https://www.twitch.tv/videos/1193532435?t=00h22m32s) where we walk through the process. 
+
 
 ## Features
 
