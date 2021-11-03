@@ -99,3 +99,8 @@ NOTE: Graphical versions of applications WORK in these containers, so if there's
 - Colin Walters and the rest of the Fedora Silverblue Team
 - Richard Brown and the rest of the MicroOS team
 - Josh Berkus, Wayne Witzel, Marco Ceppi, Martin Wimpress, Alan Pope, Justin Garrisson, Adam Israel, Aaron Lake, and Bob Killen for idea bouncing, putting up with my rambling, rando dconf tips, etc.
+- Vallery Lancey for a
+  [wallpaper](https://www.flickr.com/photos/timewitch/51521513914/). We felt that
+  a wallpaper from one of the Ubuntu community wallpaper contest winners would
+  give us the vibe we're looking for. Plus it's called Silver Morning, what a
+  brilliant coincidence! 
