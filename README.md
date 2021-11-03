@@ -52,7 +52,8 @@ This is not a distro, so no patches, etc, basically looking at the default setup
 1. `./00-install-apps.sh`
 1. Get a coffee, and then reboot your computer (Important!)
    - Read the [toolbox documentation](https://docs.fedoraproject.org/en-US/fedora-silverblue/toolbox/) and [README](https://github.com/containers/toolbox#readme), this will be useful later on. 
-3. Run `./01-desktop.sh`
+1. Run `./01-desktop.sh`
+1. Optionally run `./02-workarounds.sh` for vscode, using this via flatpak has many limitations so we're skipping them for now. 
 
 This script is terrible, it's written wrong, it doesn't check for anything properly, somethings still don't work, it basically a history file saved in a file. Make something better, turn on github sponsors, and I'll be the first one sending you money on the regular. Bring the cloud native dream to the people. Just please, for the love of all that is holy, don't make another distro. 
 
