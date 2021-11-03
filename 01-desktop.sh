@@ -14,7 +14,7 @@ gnome-extensions enable dash-to-dock@micxgx.gmail.com
 gnome-extensions enable gsconnect@andyholmes.github.io
 gnome-extensions enable sound-output-device-chooser@kgshank.net
 
-dconf write /org/gnome/shell/favorite-apps "['org.mozilla.firefox.desktop', 'com.getmailspring.Mailspring.desktop', 'org.gnome.Nautilus.desktop', 'com.visualstudio.code.desktop', 'com.spotify.Client', 'org.signal.Signal.desktop', 'org.standardnotes.standardnotes.desktop', 'org.gnome.Software.desktop', 'org.gnome.Terminal.desktop']"
+dconf write /org/gnome/shell/favorite-apps "['org.mozilla.firefox.desktop', 'org.mozilla.Thunderbird.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Rhythmbox3.desktop', 'org.libreoffice.LibreOffice.writer.desktop', 'org.gnome.Software.desktop', 'yelp.desktop']"
 
 #dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "gnome-terminal"
 #dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Primary><Alt>T'"
@@ -232,7 +232,6 @@ dconf write /org/gnome/desktop/wm/preferences/mouse-button-modifier "'<Super>'"
 dconf write /org/gnome/desktop/wm/preferences/num-workspaces "4"
 dconf write /org/gnome/desktop/wm/preferences/raise-on-click "true"
 dconf write /org/gnome/desktop/wm/preferences/resize-with-right-button "false"
-dconf write /org/gnome/desktop/wm/preferences/theme "'Adwaita'"
 dconf write /org/gnome/desktop/wm/preferences/titlebar-uses-system-font "false"
 dconf write /org/gnome/desktop/wm/preferences/visual-bell "false"
 dconf write /org/gnome/desktop/wm/preferences/visual-bell-type "'fullscreen-flash'"
@@ -627,7 +626,7 @@ dconf write /org/gnome/shell/extensions/dash-to-dock/show-favorites "true"
 dconf write /org/gnome/shell/extensions/dash-to-dock/show-mounts "true"
 dconf write /org/gnome/shell/extensions/dash-to-dock/show-running "true"
 dconf write /org/gnome/shell/extensions/dash-to-dock/show-show-apps-button "true"
-dconf write /org/gnome/shell/extensions/dash-to-dock/show-trash "false"
+dconf write /org/gnome/shell/extensions/dash-to-dock/show-trash "true"
 dconf write /org/gnome/shell/extensions/dash-to-dock/show-windows-preview "true"
 dconf write /org/gnome/shell/extensions/dash-to-dock/transparency-mode "'FIXED'"
 dconf write /org/gnome/shell/extensions/dash-to-dock/unity-backlit-items "false"
