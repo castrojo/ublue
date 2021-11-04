@@ -2,6 +2,8 @@
 
 TLDR: I've been using Ubuntu since 2004, however I want a [modern image based desktop](https://blog.verbum.org/2020/08/22/immutable-%E2%86%92-reprovisionable-anti-hysteresis/). Can I have my cake and eat it too? This is not a new distribution (whew!), just a different set of defaults and apps scripted up, with a dash of container goodies so can still also use Ubuntu. 
 
+The intended audience are cloud leaning developers who use Linux desktop, the niche of the niche. Realistically I don't want to maintain this longer than I have to, this is a crutch that I need and then at some point I'll end up on the default desktop. The cloud image I'll need until I retire because old habits die hard and it's good. Let's open our minds and do a mashup ...
+
 ## Scope
 
 This is a proof-of-concept, ideally it's enough to get gears turning and starting conversations, it is by no means a a proper implementation. 
@@ -23,8 +25,11 @@ If you want a more in depth view of what's happening, here's a [live video of me
 
 If this scares you then you're in the wrong place, if you're ready to not only burn the ships but torpedo them just to make sure we don't end up back in the old world, read on. I have selected a default set of apps that I use that I notice lots of other people use, feel free to change them up, it's only a default:
 
+- Keep Ubuntu app defaults and panel layout
+  - While this is a mashup, let's respect Ubuntu's choices here by default, you know how to change stuff
+  - But add apps that the intended audience love and need like vscode
 - Optionally install:
-  - Work apps -  vscode, zoom, slack, standard notes, signal, riot, mailspring
+  - Work apps -  zoom, slack, standard notes, signal, riot, mailspring
   - Fun apps - discord and Steam (Last release of flatpak fixed many of Steam's issues, it works much better now, try it)
   - A selection of browsers - Firefox, Brave, Chrome, Edge
 
