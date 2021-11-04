@@ -23,9 +23,10 @@ If you want a more in depth view of what's happening, here's a [live video of me
 
 If this scares you then you're in the wrong place, if you're ready to not only burn the ships but torpedo them just to make sure we don't end up back in the old world, read on. I have selected a default set of apps that I use that I notice lots of other people use, feel free to change them up, it's only a default:
 
-- Work apps - vscode, zoom, slack, standard notes, signal, riot, mailspring
-- Fun apps - discord, steam, and lutris
-- A selection of browsers - Firefox, Brave, Chrome, Edge
+- Optionally install:
+  - Work apps -  vscode, zoom, slack, standard notes, signal, riot, mailspring
+  - Fun apps - discord and Steam (Last release of flatpak fixed many of Steam's issues, it works much better now, try it)
+  - A selection of browsers - Firefox, Brave, Chrome, Edge
 
 I replaced the distro Firefox with the flatpak from upstream. As per upstream Silverblue, you want your apps to be either in containers (where you install them via apt/dnf) and your desktop apps to come via flatpaks. 
 
