@@ -1,0 +1,23 @@
+#!/bin/bash
+# Install tailscale
+
+set -eu
+
+if [ ! -e /etc/yum.repos.d/tailscale.repo ]; then
+    echo "Installing repo..."
+    sudo curl -s https://pkgs.tailscale.com/stable/fedora/tailscale.repo -o /etc/yum.repos.d/tailscale.repo > /dev/null
+fi
+
+# Check if tailscale is already installed
+rpm -q tailscale > /dev/null
+if [ $? -eq 1 ]; then
+    echo "Installing tailscale package..."
+    #rpm-ostree install tailscale
+    echo "Please reboot to finish installation."
+fi
+
+echo "Enabling tailscale (systemd)..."
+sudo systemctl enable --now tailscaled > /dev/null
+
+echo "Starting tailscale..."
+sudo tailscale up
