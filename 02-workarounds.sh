@@ -26,6 +26,7 @@ gsettings set org.gnome.desktop.sound theme-name "Yaru"
 # Wallpaper
 #
 # Set a community wallpaper
+mkdir -p /var/home/$USER/.local/share/backgrounds
 cp ./files/silvermorning.jpg /var/home/$USER/.local/share/backgrounds/
 gsettings set org.gnome.desktop.background picture-uri file:///var/home/$USER/.local/share/backgrounds/silvermorning.jpg
 
