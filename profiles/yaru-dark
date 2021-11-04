@@ -1,0 +1,15 @@
+#!/bin/bash
+# Install the Yaru (dark) theme
+set -eu
+
+rpm -q yaru-theme > /dev/null
+if [ $? -eq 1 ]; then
+    echo "Installing yaru theme package..."
+    rpm-ostree install yaru-theme
+    echo "Please reboot to finish installation of the layered package and re-run this script to enable Yaru-dark."
+    exit 0
+fi
+
+gsettings set org.gnome.desktop.interface gtk-theme "Yaru-dark"
+gsettings set org.gnome.desktop.interface icon-theme "Yaru"
+gsettings set org.gnome.desktop.sound theme-name "Yaru"
