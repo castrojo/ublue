@@ -12,8 +12,9 @@ fi
 rpm -q tailscale > /dev/null
 if [ $? -eq 1 ]; then
     echo "Installing tailscale package..."
-    #rpm-ostree install tailscale
-    echo "Please reboot to finish installation."
+    rpm-ostree install tailscale
+    echo "Please reboot to finish installation of the layered package and re-run this script to enable tailscale."
+    exit 0
 fi
 
 echo "Enabling tailscale (systemd)..."
