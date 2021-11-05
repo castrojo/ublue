@@ -1,0 +1,35 @@
+#!/bin/bash
+# install starship.rs prompt
+set -eu
+
+# Check if starship is installed
+if ! command -v starship &> /dev/null
+then
+    echo "Installing starship..."
+    mkdir -p ~/.local/bin
+    sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y -b ~/.local/bin
+fi
+
+# Configure shell(s): bash and zsh for now
+RELOAD=0
+
+# bash
+if [ -f ~/.bashrc ] && ! grep -Fq "starship init bash" ~/.bashrc; then
+    echo "Configuring bash..."
+    echo 'eval "$(starship init bash)"' >> ~/.bashrc
+    RELOAD=1
+fi
+
+# zsh
+if [ -f ~/.zshrc ] && ! grep -Fq "starship init zsh" ~/.zshrc; then
+    echo "Configuring zsh..."
+    echo 'eval "$(starship init zsh)"' >> ~/.bashrc
+    RELOAD=1
+fi
+
+if [ $RELOAD -eq 1 ]; then
+    echo "Reload your current shell to start the starship prompt."
+else
+    echo "Starship is already configured."
+fi
+
