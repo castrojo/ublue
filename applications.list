@@ -8,6 +8,7 @@ org.gustavoperedo.FontDownloader
 org.libreoffice.LibreOffice
 org.mozilla.firefox
 org.mozilla.Thunderbird
+org.freedesktop.Platform.ffmpeg-full/x86_64/21.08
 
 # Other goodies
 #
@@ -24,7 +25,6 @@ org.mozilla.Thunderbird
 #org.audacityteam.Audacity
 #org.flameshot.Flameshot
 #org.freedesktop.Piper
-#org.freedesktop.Platform.ffmpeg-full/x86_64/20.08
 #org.gimp.GIMP
 #org.inkscape.Inkscape
 #org.kde.krita
