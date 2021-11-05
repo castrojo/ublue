@@ -29,7 +29,6 @@ while ! is_ostree_idle; do
     sleep 5
 done
 
-# if [ $(rpm-ostree override remove firefox > /dev/null) ]; then
 if rpm-ostree override remove firefox > /dev/null; then
     echo "Removed Firefox from base layer."
 fi
@@ -37,7 +36,15 @@ fi
 # TODO: pull these from an external list?
 # --idempotent seems to fix running this multiple times
 echo "Installing layered packages..."
-rpm-ostree --idempotent install gnome-shell-extension-appindicator gnome-shell-extension-sound-output-device-chooser gnome-shell-extension-gamemode gnome-shell-extension-frippery-move-clock gnome-shell-extension-dash-to-dock gnome-shell-extension-gsconnect libratbag-ratbagd gnome-tweaks
+rpm-ostree --idempotent install \
+    gnome-shell-extension-appindicator \
+    gnome-shell-extension-sound-output-device-chooser \
+    gnome-shell-extension-gamemode \
+    gnome-shell-extension-frippery-move-clock \
+    gnome-shell-extension-dash-to-dock \
+    gnome-shell-extension-gsconnect \
+    libratbag-ratbagd \
+    gnome-tweaks
 
 echo "You should reboot!"
 exit 0;
