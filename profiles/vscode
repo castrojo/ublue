@@ -1,0 +1,29 @@
+#!/bin/bash
+# Install vscode as an overlay so it can access the host terminal
+# This is hopefully a temporary workaround until the flatpak can
+# access the system/toolbox environments without ugly hacks.
+set -eu
+
+# Disclaimer
+echo "This profile will remove the VSCode flatpak in favor of an overlayed package, in order to enable access to the host terminal. This is a temporary workaround until the flatpak can access the system/toolbox environment without ugly hacks."
+echo ""
+echo "Press any key to continue, or control-c to exit"
+read -n1 -s
+
+
+# if the flatpak is installed, remove it
+if grep -q "com.visualstudio.code" <<< `flatpak list --app --columns=application`; then
+    echo "Removing Visual Studio Code flatpak..."
+    flatpak uninstall -y com.visualstudio.code
+fi
+
+rpm -q code > /dev/null
+if [ $? -eq 1 ]; then
+    echo "Installing Visual Studio Code as an overlay package..."
+    sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+    rpm-ostree install code
+    echo "Please reboot to finish installation of the layered package."
+    exit 0
+else
+    echo "Visual Studio Code overlay is already installed."
+fi
