@@ -2,6 +2,28 @@
 # common functions
 set -eu
 
+flatpak_install () {
+    # Test reading in the list of apps to install and create a progress bar
+    mapfile -t applications < $2
+
+    # Remove empty lines and commented out lines
+    for i in ${!applications[@]};do
+        name=$(echo -e "${applications[$i]}" | sed -e 's/[[:space:]]*$//')
+        if [[ $name == "" || $name == \#* ]]; then
+            unset applications[$i]
+        fi 
+    done
+
+    n=${#applications[@]}
+    echo "Installing $n applications from $1..."
+
+    i=0
+    for application in "${applications[@]}"; do
+        # echo "$((100*(++i)/n))"
+        /usr/bin/flatpak install $1 --assumeyes --noninteractive --or-update $application
+    done
+}
+
 flatpak_install_remote () {
     flatpak remote-add --if-not-exists $1 $2
 
