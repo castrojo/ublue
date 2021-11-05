@@ -1,6 +1,6 @@
 #!/bin/bash
 # Install the Yaru theme
-set -eu
+set -u
 
 
 # Check if yaru-theme is already installed
