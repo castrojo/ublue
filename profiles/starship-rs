@@ -23,7 +23,7 @@ fi
 # zsh
 if [ -f ~/.zshrc ] && ! grep -Fq "starship init zsh" ~/.zshrc; then
     echo "Configuring zsh..."
-    echo 'eval "$(starship init zsh)"' >> ~/.bashrc
+    echo 'eval "$(starship init zsh)"' >> ~/.zshrc
     RELOAD=1
 fi
 
