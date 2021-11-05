@@ -1,3 +1,5 @@
+# Originally based on the dockerfile created by Ievgen Popovych <jmennius@gmail.com>
+
 FROM docker.io/library/ubuntu:20.04
 
 LABEL com.github.containers.toolbox="true" \
@@ -6,13 +8,13 @@ LABEL com.github.containers.toolbox="true" \
       version="20.04" \
       usage="This image is meant to be used with the toolbox command" \
       summary="Base image for creating Ubuntu toolbox containers" \
-      maintainer="Ievgen Popovych <jmennius@gmail.com>"
+      maintainer="Adam Israel <adam@adamisrael.com>"
 
 COPY README.md /
 
 # remove some container-optimized apt configuration;
 # removing docker-gzip-indexes specifically helps with command-not-found
-RUN rm /etc/apt/apt.conf.d/docker-gzip-indexes /etc/apt/apt.conf.d/docker-no-languages
+RUN rm -f /etc/apt/apt.conf.d/docker-gzip-indexes /etc/apt/apt.conf.d/docker-no-languages
 
 # Restore documentation but do not upgrade all packages, that's not appropriate;
 # Install ubuntu-minimal & ubuntu-standard
@@ -32,6 +34,6 @@ RUN rm /extra-packages
 RUN sed -i '/^auth.*pam_unix.so/s/nullok_secure/try_first_pass nullok/' /etc/pam.d/common-auth
 
 # Fix empty bind-mount to clear selinuxfs (see #337)
-RUN mkdir /usr/share/empty
+RUN mkdir -p /usr/share/empty
 
 CMD /bin/sh
