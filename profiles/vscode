@@ -2,7 +2,7 @@
 # Install vscode as an overlay so it can access the host terminal
 # This is hopefully a temporary workaround until the flatpak can
 # access the system/toolbox environments without ugly hacks.
-set -eu
+set -u
 
 # Disclaimer
 echo "This profile will remove the VSCode flatpak in favor of an overlayed package, in order to enable access to the host terminal. This is a temporary workaround until the flatpak can access the system/toolbox environment without ugly hacks."
