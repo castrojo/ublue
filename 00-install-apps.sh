@@ -5,33 +5,20 @@ set -eu
 
 [ "$UID" -eq 0 ] || { echo "This script must be run as root."; exit 1;} # Need to figure out how to pkexec so we only ask for the password once.
 
-flatpak_install_remote () {
-    flatpak remote-add --if-not-exists $1 $2
-
-    # Verify that the remote is setup
-    if [ ! -f "/var/lib/flatpak/repo/$1.trustedkeys.gpg" ]; then
-        echo "Unable to verify public key"
-        return 1
-    fi
-    return 0
-}
-
-is_ostree_idle () {
-    # TODO: There's probably a cleaner way to do this.
-    return $(rpm-ostree status| grep ^State | grep idle > /dev/null)
-}
+PROFILES=./profiles
+source $PROFILES/common
 
 # http://mywiki.wooledge.org/BashFAQ/044
-progressbar() {
-    local max=$((${COLUMNS:-$(tput cols)} - 2)) in n i
-    while read -r in; do
-        n=$((max*in/100))
-        printf '\r['
-        for ((i=0; i<n; i++)); do printf =; done
-        for ((; i<max; i++)); do printf ' '; done
-        printf ']'
-    done
-}
+# progressbar() {
+#     local max=$((${COLUMNS:-$(tput cols)} - 2)) in n i
+#     while read -r in; do
+#         n=$((max*in/100))
+#         printf '\r['
+#         for ((i=0; i<n; i++)); do printf =; done
+#         for ((; i<max; i++)); do printf ' '; done
+#         printf ']'
+#     done
+# }
 
 flatpak_install () {
     # Test reading in the list of apps to install and create a progress bar
@@ -69,15 +56,18 @@ case $beta in
         flatpak_install flathub-beta applications-beta.list
 esac
 
-echo "Configuring Flatpak automatic upgrades..."
-# TODO: Maybe only do this if the file doesn't exist, or it does but it's diff than our file?
-sudo cp ./files/flatpak-automatic.service /etc/systemd/system
-sudo cp ./files/flatpak-automatic.timer /etc/systemd/system
-sudo cp ./files/rpm-ostreed.conf /etc/
+# Configure FLatpak automatic upgrades
+source $PROFILES/flatpak_automatic_updates
 
-systemctl daemon-reload
-systemctl enable /etc/systemd/system/flatpak-automatic.timer
-systemctl enable rpm-ostreed-automatic.timer
+# echo "Configuring Flatpak automatic upgrades..."
+# # TODO: Maybe only do this if the file doesn't exist, or it does but it's diff than our file?
+# sudo cp ./files/flatpak-automatic.service /etc/systemd/system
+# sudo cp ./files/flatpak-automatic.timer /etc/systemd/system
+# sudo cp ./files/rpm-ostreed.conf /etc/
+
+# systemctl daemon-reload
+# systemctl enable /etc/systemd/system/flatpak-automatic.timer
+# systemctl enable rpm-ostreed-automatic.timer
 
 # TODO: This fails if we're re-running the script and the override is already in place
 ## Remove Firefox from the base image, we're using the upstream flatpak instead

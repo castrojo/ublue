@@ -1,0 +1,20 @@
+#!/bin/bash
+# common functions
+set -eu
+
+flatpak_install_remote () {
+    flatpak remote-add --if-not-exists $1 $2
+
+    # Verify that the remote is setup
+    if [ ! -f "/var/lib/flatpak/repo/$1.trustedkeys.gpg" ]; then
+        echo "Unable to verify public key"
+        return 1
+    fi
+    return 0
+}
+
+is_ostree_idle () {
+    # TODO: There's probably a cleaner way to do this.
+    return $(rpm-ostree status| grep ^State | grep idle > /dev/null)
+}
+
