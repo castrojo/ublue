@@ -1,0 +1,41 @@
+#!/bin/bash
+# common functions
+set -eu
+
+flatpak_install () {
+    # Test reading in the list of apps to install and create a progress bar
+    mapfile -t applications < $2
+
+    # Remove empty lines and commented out lines
+    for i in ${!applications[@]};do
+        name=$(echo -e "${applications[$i]}" | sed -e 's/[[:space:]]*$//')
+        if [[ $name == "" || $name == \#* ]]; then
+            unset applications[$i]
+        fi 
+    done
+
+    n=${#applications[@]}
+    echo "Installing $n applications from $1..."
+
+    i=0
+    for application in "${applications[@]}"; do
+        # echo "$((100*(++i)/n))"
+        /usr/bin/flatpak install $1 --assumeyes --noninteractive --or-update $application
+    done
+}
+
+flatpak_install_remote () {
+    flatpak remote-add --if-not-exists $1 $2
+
+    # Verify that the remote is setup
+    if [ ! -f "/var/lib/flatpak/repo/$1.trustedkeys.gpg" ]; then
+        echo "Unable to verify public key"
+        return 1
+    fi
+    return 0
+}
+
+is_ostree_idle () {
+    # TODO: There's probably a cleaner way to do this.
+    return $(rpm-ostree status| grep ^State | grep idle > /dev/null)
+}
