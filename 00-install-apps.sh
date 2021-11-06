@@ -1,7 +1,7 @@
 #!/bin/bash
 ## Install a base set of bits to mimic the Ubuntu experience
 ## Intended for Fedora Silverblue and openSUSE MicroOS or Clear Linux
-set -eux
+set -eu
 
 [ "$UID" -eq 0 ] || { echo "This script must be run as root."; exit 1;} # Need to figure out how to pkexec so we only ask for the password once.
 
