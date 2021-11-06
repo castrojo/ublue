@@ -1,0 +1,15 @@
+#!/bin/bash
+# Configure Flatpak automatic upgrades
+set -eu
+
+echo -n "Configuring Flatpak automatic upgrades..."
+# TODO: Maybe only do this if the file doesn't exist, or it does but it's diff than our file?
+sudo cp ./files/flatpak-automatic.service /etc/systemd/system
+sudo cp ./files/flatpak-automatic.timer /etc/systemd/system
+sudo cp ./files/rpm-ostreed.conf /etc/
+
+systemctl daemon-reload
+systemctl enable /etc/systemd/system/flatpak-automatic.timer
+systemctl enable rpm-ostreed-automatic.timer
+
+echo "done."

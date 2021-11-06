@@ -1,12 +1,12 @@
 #!/bin/bash
-## Install a base set of profiles to mimic the Ubuntu experience
+## Install a base set of bits to mimic the Ubuntu experience
 ## Intended for Fedora Silverblue and openSUSE MicroOS or Clear Linux
 set -eux
 
 [ "$UID" -eq 0 ] || { echo "This script must be run as root."; exit 1;} # Need to figure out how to pkexec so we only ask for the password once.
 
-PROFILES=./profiles
-source $PROFILES/common
+BITS=./bits
+source $BITS/common
 
 echo "Installing Flatpak(s)..."
 flatpak_install_remote flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -21,7 +21,7 @@ case $beta in
 esac
 
 # Configure FLatpak automatic upgrades
-source $PROFILES/flatpak_automatic_updates
+source $BITS/flatpak_automatic_updates
 
 echo "Checking base layer..."
 while ! is_ostree_idle; do
