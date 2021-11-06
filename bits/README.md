@@ -5,7 +5,7 @@ Bits are profiles, a collection of scripts that will configure layered packages 
 
 | Profile | Description |
 | ------- | ----------- |
-| tailscale | Install the Tailscale VPN (https://tailscale.com/) |
+| tailscale | Install the [Tailscale VPN](https://tailscale.com/) |
 | vscode    | Instal Visual Studio Code |
 | yaru      | Install the Yaru theme |
 | yaru-dark | Install the Yaru-dark theme |
