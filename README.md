@@ -73,14 +73,33 @@ To revert (and I mean, totally revert, you've been warned):
 
 By default doing `toolbox enter` will prompt you to create a Fedora container and take you inside. This works fine and even installing graphical applications works! 
 
-- `./files/build-debian-toolbox.sh` will build a bullseye container
-- `./files/build-ubuntu-toolbox.sh` will build an ubuntu container, however this is broken.
+`./99-build-images.sh` will build all of the images in the `images/` folder. Right now that includes:
 
-@jmennius has kindly built a 20.04 container, thanks! Let's use that for now:
+| Distro | Release | Tag |
+| ------ | ------- | --- |
+| Arch   | latest  | arch:latest |
+| Debian | bullseye | debian:bullseye |
+| Debian | sid | debian:sid |
+| Ubuntu | 18.04 | ubuntu:18.04 |
+| Ubuntu | 20.04 | ubuntu: 20.04 |
 
-    toolbox create --image registry.hub.docker.com/jmennius/ubuntu-toolbox:20.04 ubuntu
+To build a single image:
 
-You can then do `toolbox enter ubuntu` to go into the toolbox. Future versions of these scripts will build an image for you as part of the installation process so you can verify it and add custom packages. If you set the toolboxes to launch on gnome-terminal execution you can have a more seamless experience:  
+```bash
+# Build Ubuntu 20.04
+podman build -t ubuntu:20.04 -f images/ubuntu/20.04/Containerfile
+```
+
+One the images are built, you can create the container by tag, i.e.,
+
+```bash
+# Create a container named my-project
+toolbox create --image ubuntu:20.04 -c my-project
+```
+
+You can then do `toolbox enter my-project` to go into the toolbox. 
+
+If you set the toolboxes to launch on gnome-terminal execution you can have a more seamless experience:  
 
 ![toolbox](https://user-images.githubusercontent.com/1264109/139595535-fd1b8955-1b4a-4b70-ac9b-a4287c590cfb.png)
 
