@@ -1,6 +1,6 @@
 # Bits
 
-Bits are profiles are a collection of scripts that will configure layered packages to enable certain functionality or configure your desktop/environment in specific ways. Run these to do the following:
+Bits are profiles, a collection of scripts that will configure layered packages to enable certain functionality or configure your desktop/environment in specific ways. Run these to do the following:
 
 
 | Profile | Description |
