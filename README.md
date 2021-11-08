@@ -129,3 +129,7 @@ NOTE: Graphical versions of applications WORK in these containers, so if there's
   a wallpaper from one of the Ubuntu community wallpaper contest winners would
   give us the vibe we're looking for. Plus it's called Silver Morning, what a
   brilliant coincidence! 
+  
+  ## Fun Stats
+  
+  ![Alt](https://repobeats.axiom.co/api/embed/a8b746311ae37bead7de66fb5e735b146cefb0e8.svg "Repobeats analytics image")
