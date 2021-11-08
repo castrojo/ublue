@@ -20,8 +20,16 @@ case $beta in
         flatpak_install flathub-beta applications-beta.list
 esac
 
-# Configure FLatpak automatic upgrades
+# Configure Flatpak automatic upgrades
 source $BITS/flatpak_automatic_updates
+
+# Anonymously count the machine https://coreos.github.io/rpm-ostree/countme/
+# Swap this out if you never want to be counted:
+#
+# systemctl mask --now rpm-ostree-countme.timer
+#
+
+systemctl enable rpm-ostree-countme.timer
 
 echo "Checking base layer..."
 while ! is_ostree_idle; do
