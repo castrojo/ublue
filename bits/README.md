@@ -1,6 +1,6 @@
 # Bits
 
-Bits are a collection of scripts that will configure layered packages to enable certain functionality or configure your desktop/environment in specific ways. 
+Bits are a collection of scripts that will configure layered packages to enable certain functionality or configure your desktop/environment in specific ways. You can run the ones you want and then reboot, you don't need to reboot inbetween each one. 
 
 REMEMBER: These are workarounds, the same concerns about 3rd party repos still apply to your system, even on silverblue!
 
