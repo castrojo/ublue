@@ -130,6 +130,6 @@ NOTE: Graphical versions of applications WORK in these containers, so if there's
   give us the vibe we're looking for. Plus it's called Silver Morning, what a
   brilliant coincidence! 
   
-  ## Fun Stats
+# Fun Stats
   
   ![Alt](https://repobeats.axiom.co/api/embed/a8b746311ae37bead7de66fb5e735b146cefb0e8.svg "Repobeats analytics image")
