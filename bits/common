@@ -29,7 +29,8 @@ flatpak_install_remote () {
 
     # Verify that the remote is setup
     if [ ! -f "/var/lib/flatpak/repo/$1.trustedkeys.gpg" ]; then
-        echo "Unable to verify public key"
+        flatpak remote-delete $1
+        echo "Unable to verify public key. Please try again."
         return 1
     fi
     return 0
