@@ -99,6 +99,8 @@ toolbox create --image ubuntu:20.04 -c my-project
 
 You can then do `toolbox enter my-project` to go into the toolbox. 
 
+Pro tip: When you're inside a toolbx you might be confused that you can't run containers from inside the toolbx. You can `alias podman="flatpak-spawn --host podman"` to let you call podman so you can fire up containers while still in your familiar toolbx. Thanks [Adam Kaplan](https://twitter.com/AdamBKaplan/status/1453059428677296130)!
+
 If you set the toolboxes to launch on gnome-terminal execution you can have a more seamless experience:  
 
 ![toolbox](https://user-images.githubusercontent.com/1264109/139595535-fd1b8955-1b4a-4b70-ac9b-a4287c590cfb.png)
