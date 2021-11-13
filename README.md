@@ -109,6 +109,8 @@ See the [Fedora documentation on keyboard shortcuts](https://docs.fedoraproject.
 
 NOTE: Graphical versions of applications WORK in these containers, so if there's an app you need in Ubuntu that is not in Fedora or something then apt install it and fire it up! 
 
+Also check out [this post](https://discussion.fedoraproject.org/t/toolbox-and-visual-studio-code-remote-containers/27987) on setting up vscode with toolboxes, it might be useful for your workflow.
+
 ## Todo
 
 - https://github.com/containers/toolbox is crucial to this.
