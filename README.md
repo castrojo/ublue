@@ -81,7 +81,8 @@ By default doing `toolbox enter` will prompt you to create a Fedora container an
 | Debian | bullseye | debian:bullseye |
 | Debian | sid | debian:sid |
 | Ubuntu | 18.04 | ubuntu:18.04 |
-| Ubuntu | 20.04 | ubuntu: 20.04 |
+| Ubuntu | 20.04 | ubuntu:20.04 |
+| Ubuntu | 22.04 | ubuntu:22.04 | 
 
 To build a single image:
 
