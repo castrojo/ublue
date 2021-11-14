@@ -1,4 +1,4 @@
-FROM docker.io/library/debian:bullseye
+FROM public.ecr.aws/debian/debian:bullseye
 
 ENV NAME=debian-toolbox VERSION=bullseye
 LABEL com.github.containers.toolbox="true" \

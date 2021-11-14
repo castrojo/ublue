@@ -1,4 +1,4 @@
-FROM docker.io/library/debian:sid
+FROM public.ecr.aws/debian/debian:sid
 
 ENV NAME=debian-toolbox VERSION=sid
 LABEL com.github.containers.toolbox="true" \

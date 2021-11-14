@@ -1,6 +1,6 @@
 # Originally based on the dockerfile created by Ievgen Popovych <jmennius@gmail.com>
 
-FROM docker.io/library/ubuntu:18.04
+FROM public.ecr.aws/ubuntu/ubuntu:18.04
 
 LABEL com.github.containers.toolbox="true" \
       com.github.debarshiray.toolbox="true" \
