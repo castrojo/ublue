@@ -1,8 +1,12 @@
 # ublue - Fedora Silverblue for Ubuntu Users
 
-TLDR: I've been using Ubuntu since 2004, however I want a [modern image based desktop](https://blog.verbum.org/2020/08/22/immutable-%E2%86%92-reprovisionable-anti-hysteresis/). Can I have my cake and eat it too? This is not a new distribution (whew!), just a different set of defaults and apps scripted up, with a dash of container goodies so can still also use Ubuntu. 
+TLDR: I've been using Ubuntu since 2004, however I want a [modern image based desktop](https://blog.verbum.org/2020/08/22/immutable-%E2%86%92-reprovisionable-anti-hysteresis/).
+Can I have my cake and eat it too?
+This is not a new distribution (whew!), just a different set of defaults and apps scripted up, with a dash of container goodies so can still also use Ubuntu. 
 
-The intended audience are cloud leaning developers who use Linux desktop, the niche of the niche. Realistically I don't want to maintain this longer than I have to, this is a crutch that I need and then at some point I'll end up on the default desktop. The cloud image I'll need until I retire because old habits die hard and it's good. Let's open our minds and do a mashup ...
+The intended audience are cloud leaning developers who use Linux desktops, the niche of the niche.
+Realistically I don't want to maintain this longer than I have to, this is a crutch that I need and then at some point I'll end up on the default desktop.
+The cloud image I'll need until I retire because old habits die hard and it's good. Let's open our minds and do a mashup ...
 
 ## Scope
 
@@ -23,7 +27,8 @@ If you want a more in depth view of what's happening, here's a [live video of me
 - rpm-ostree is set to stage updates by default, so it just does it automatically.
 - systemd service units to update all the flatpaks four times a day to match the update cadence of Ubuntu 
 
-If this scares you then you're in the wrong place, if you're ready to not only burn the ships but torpedo them just to make sure we don't end up back in the old world, read on. I have selected a default set of apps that I use that I notice lots of other people use, feel free to change them up, it's only a default:
+If this scares you then you're in the wrong place, if you're ready to not only burn the ships but torpedo them just to make sure we don't end up back in the old world, read on.
+I have selected a default set of apps that I use that I notice lots of other people use, feel free to change them up, it's only a default:
 
 - Keep Ubuntu app defaults and panel layout
   - While this is a mashup, let's respect Ubuntu's choices here by default, you know how to change stuff
@@ -33,9 +38,12 @@ If this scares you then you're in the wrong place, if you're ready to not only b
   - Fun apps - discord and Steam (Last release of flatpak fixed many of Steam's issues, it works much better now, try it)
   - A selection of browsers - Firefox, Brave, Chrome, Edge
 
-I replaced the distro Firefox with the flatpak from upstream. As per upstream Silverblue, you want your apps to be either in containers (where you install them via apt/dnf) and your desktop apps to come via flatpaks. 
+I replaced the distro Firefox with the flatpak from upstream.
+As per upstream Silverblue, you want your apps to be either in containers (where you install them via apt/dnf) and your desktop apps to come via flatpaks. 
 
-Maintenance: The gotcha is you gotta shutdown/reboot your PC on the regular (whatever matches your workflow). This is the price the UNIX gods demand for the removal of dpkg-reconfigure -a from your life. I just shut it down at the end of each workday. Your reward is little to zero host OS maintenance. 
+Maintenance: The gotcha is you gotta shutdown/reboot your PC on the regular (whatever matches your workflow).
+This is the price the UNIX gods demand for the removal of dpkg-reconfigure -a from your life.
+I just shut it down at the end of each workday. Your reward is little to zero host OS maintenance. 
 
 ### Desktop Changes
 
@@ -47,7 +55,10 @@ While upstream GNOME is fine I've been using a seb128-built desktop for most of 
 - Dash-to-dock - familiarity, I default it to the left ubuntu-like setup
 - gsconnect - Phone integration with my desktop is useful
 
-This is not a distro, so no patches, etc, basically looking at the default setup in Ubuntu and mirroring it in Fedora. Tailor to your taste. I decided to use the distro packages for these extensions instead of snagging them from extensions.gnome.org. Sometimes these break so I turn off the version checking. YOLO not my mess I'm just dealing with it, seems to work. 
+This is not a distro, so no patches, etc, basically looking at the default setup in Ubuntu and mirroring it in Fedora.
+Tailor to your taste.
+I decided to use the distro packages for these extensions instead of snagging them from extensions.gnome.org. Sometimes these break so I turn off the version checking.
+YOLO not my circus, not my monkeys.
 
 ## Instructions
 
@@ -61,7 +72,10 @@ This is not a distro, so no patches, etc, basically looking at the default setup
 1. Run `./01-desktop.sh`
 1. Optionally run the various scripts in `bits/` to install vscode, tailscale, and the ubuntu themes. We'll add little mini scripts here that are convenient for us.    
 
-This script is terrible, it's written wrong, it doesn't check for anything properly, somethings still don't work, it basically a history file saved in a file. Make something better, turn on github sponsors, and I'll be the first one sending you money on the regular. Bring the cloud native dream to the people. Just please, for the love of all that is holy, don't make another distro. 
+This script is terrible, it's written wrong, it doesn't check for anything properly, somethings still don't work, it basically a history file saved in a file.
+Make something better, turn on github sponsors, and I'll be the first one sending you money on the regular.
+Bring the cloud native dream to the people.
+Just please, for the love of all that is holy, don't make another distro. 
 
 To revert (and I mean, totally revert, you've been warned):
 
@@ -69,9 +83,13 @@ To revert (and I mean, totally revert, you've been warned):
 
 ### Installing a toolbx
 
-[Toolbx](https://github.com/containers/toolbox) is a neat tool that lets you run Linux distro cloud containers and then enter into them. It's in the process of being renamed from "toolbox" to "toolbx" so there's still some confusion as of now so just fyi. The neater magic is it also transparently mounts your home directory for you, so we'll use an Ubuntu cloud image as our "userspace" in a terminal, similar to the how WSL does it. This enables us to bring all our old scripts, dotfiles with us into this new workflow, we want to be more efficient not force reset your unix brain. 
+[Toolbx](https://github.com/containers/toolbox) is a neat tool that lets you run Linux distro cloud containers and then enter into them. 
+It's in the process of being renamed from "toolbox" to "toolbx" so there's still some confusion as of now so just FYI.
+The neater magic is it also transparently mounts your home directory for you, so we'll use an Ubuntu cloud image as our "userspace" in a terminal, similar to the how WSL does it.
+This enables us to bring all our old scripts, dotfiles with us into this new workflow, we want to be more efficient not force reset your unix brain. 
 
-By default doing `toolbox enter` will prompt you to create a Fedora container and take you inside. This works fine and even installing graphical applications works!
+By default doing `toolbox enter` will prompt you to create a Fedora container and take you inside.
+This works fine and even installing graphical applications works!
 
 `./99-build-images.sh` will build all of the images in the `images/` folder. Right now that includes:
 
@@ -104,15 +122,20 @@ If you set the toolboxes to launch on gnome-terminal execution you can have a mo
 
 ![toolbox](https://user-images.githubusercontent.com/1264109/139595535-fd1b8955-1b4a-4b70-ac9b-a4287c590cfb.png)
 
-See the [Fedora documentation on keyboard shortcuts](https://docs.fedoraproject.org/en-US/quick-docs/proc_setting-key-shortcut/) to assign the terminals to shortcuts. A rememberable one would be to keep `Ctrl-Alt-T` as the default non-toolbox terminal so you can do host things, and then `Ctrl-Alt-U` for the terminal that executes `toolbox enter ubuntu`. The U stands for Ubuntu :smile: Over time you may find yourself needing the host terminal less and less, expect to be very dependent on it if you're new. 
+See the [Fedora documentation on keyboard shortcuts](https://docs.fedoraproject.org/en-US/quick-docs/proc_setting-key-shortcut/) to assign the terminals to shortcuts.
+A rememberable one would be to keep `Ctrl-Alt-T` as the default non-toolbox terminal so you can do host things, and then `Ctrl-Alt-U` for the terminal that executes `toolbox enter ubuntu`.
+The U stands for Ubuntu :smile:
+Over time you may find yourself needing the host terminal less and less, expect to be very dependent on it if you're new. 
 
 NOTE: Graphical versions of applications WORK in these containers, so if there's an app you need in Ubuntu that is not in Fedora or something then apt install it and fire it up! 
 
 ## VSCode and other developer notes
 
-IDEs expect access to lots of stuff, so we compromise by overlaying vscode and directly adding the repo from upstream. Check out [this post](https://discussion.fedoraproject.org/t/toolbox-and-visual-studio-code-remote-containers/27987) on setting up vscode with toolboxes, it might be useful for your workflow and is tracking issues with the various projects on what it would take to have vscode running as a flatpak but being able to directly access your toolboxes.
+IDEs expect access to lots of stuff, so we compromise by overlaying vscode and directly adding the repo from upstream.
+Check out [this post](https://discussion.fedoraproject.org/t/toolbox-and-visual-studio-code-remote-containers/27987) on setting up vscode with toolboxes, it might be useful for your workflow and is tracking issues with the various projects on what it would take to have vscode running as a flatpak but being able to directly access your toolboxes.
 
-When you're inside a toolbx you might be confused that you can't run containers from inside the toolbx. You can `alias podman="flatpak-spawn --host podman"` to let you call podman so you can fire up containers while still in your familiar toolbx. Thanks [Adam Kaplan](https://twitter.com/AdamBKaplan/status/1453059428677296130)!
+When you're inside a toolbx you might be confused that you can't run containers from inside the toolbx. You can `alias podman="flatpak-spawn --host podman"` to let you call podman so you can fire up containers while still in your familiar toolbx.
+Thanks [Adam Kaplan](https://twitter.com/AdamBKaplan/status/1453059428677296130)!
 
 This area needs work and is changing quickly!
 
