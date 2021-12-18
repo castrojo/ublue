@@ -113,7 +113,7 @@ One the images are built, you can create the container by tag, i.e.,
 
 ```bash
 # Create a container named my-project
-toolbox create --image ubuntu:20.04 -c my-project
+toolbox create --image ubuntu-20.04 -c my-project
 ```
 
 You can then do `toolbox enter my-project` to go into the toolbx. 
