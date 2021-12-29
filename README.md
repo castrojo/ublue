@@ -127,7 +127,18 @@ A rememberable one would be to keep `Ctrl-Alt-T` as the default non-toolbox term
 The U stands for Ubuntu :smile:
 Over time you may find yourself needing the host terminal less and less, expect to be very dependent on it if you're new. 
 
-NOTE: Graphical versions of applications WORK in these containers, so if there's an app you need in Ubuntu that is not in Fedora or something then apt install it and fire it up! 
+NOTE: Graphical versions of applications WORK in these containers, so if there's
+an app you need in Ubuntu that is not in Fedora or something then apt install it
+and fire it up! 
+
+### Distrobox, alternative to toolbx (Optional)
+
+If maintaining your images is too annoying I've included [distrobox](https://github.com/89luca89/distrobox). 
+This project, inspired by toolbx takes an alternative approach by using unmodified distro cloud images. 
+
+Both projects use podman so it's a matter of taste, the base tech is the same.
+
+Run `bits/distrobox` to install it. 
 
 ## VSCode and other developer notes
 

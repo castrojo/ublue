@@ -1,0 +1,20 @@
+#!/bin/bash
+# install distrobox
+# You can use this as an alternative to toolbx: 
+# https://github.com/89luca89/distrobox
+
+set -eu
+
+# Check if distrobox is installed
+if ! command -v distrobox-create &> /dev/null
+then
+    echo "Installing distrobox..."
+    mkdir -p ~/.local/bin
+    curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- -p ~/.local/bin
+fi
+
+# Point to docs
+echo "distrobox installed, check https://github.com/89luca89/distrobox for docs."
+echo "Restart your terminal and then you can start creating distroboxes:"
+echo "distrobox-create --name ubuntu-20 --image ubuntu:20.04"
+echo "distrobox-enter --name ubuntu-20"
