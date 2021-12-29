@@ -10,6 +10,7 @@ Run these to do the following:
 | Bit     | Description |
 | ------- | ----------- |
 | 1password | Install 1password |
+| distrobox | Install distrobox, an alternative to toolbx |
 | starship-rs | Install the [Starship](https://starship.rs/) cross-shell prompt |
 | tailscale | Install the [Tailscale VPN](https://tailscale.com/) |
 | vscode    | Instal Visual Studio Code |
