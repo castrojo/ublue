@@ -1,7 +1,6 @@
 # Default-y apps
 #
 org.gnome.Dejadup
-org.gnome.Extensions
 org.gnome.Rhythmbox3
 org.gnome.Shotwell
 org.gustavoperedo.FontDownloader
