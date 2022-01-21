@@ -9,13 +9,17 @@ org.libreoffice.LibreOffice
 org.mozilla.firefox
 org.mozilla.Thunderbird
 org.freedesktop.Platform.ffmpeg-full/x86_64/21.08
+io.github.celluloid_player.Celluloid
+com.github.tchx84.Flatseal
+com.mattjakeman.ExtensionManager
+org.gnome.FileRoller
+org.gnome.Firmware
 
 # Other goodies
 #
 #com.belmoussaoui.Obfuscate
 #com.discordapp.Discord
 #com.getmailspring.Mailspring
-#com.github.tchx84.Flatseal
 #com.obsproject.Studio
 #com.slack.Slack
 #com.spotify.Client
