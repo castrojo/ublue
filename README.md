@@ -37,6 +37,7 @@ I have selected a default set of apps that I use that I notice lots of other peo
   - Work apps -  zoom, slack, standard notes, signal, riot, mailspring
   - Fun apps - discord and Steam (Last release of flatpak fixed many of Steam's issues, it works much better now, try it)
   - A selection of browsers - Firefox, Brave, Chrome, Edge
+  - The excellent [Extensions Manager](https://www.omgubuntu.co.uk/2022/01/gnome-extension-manager-app-easy-install) application is included to manage your GNOME extensions. Note that extensions.gnome.org won't work due to sandboxing, so this is a work around until all that is sorted in the future.
 
 I replaced the distro Firefox with the flatpak from upstream.
 As per upstream Silverblue, you want your apps to be either in containers (where you install them via apt/dnf) and your desktop apps to come via flatpaks. 
