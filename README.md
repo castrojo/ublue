@@ -2,11 +2,13 @@
 
 TLDR: I've been using Ubuntu since 2004, however I want a [modern image based desktop](https://blog.verbum.org/2020/08/22/immutable-%E2%86%92-reprovisionable-anti-hysteresis/).
 Can I have my cake and eat it too?
-This is not a new distribution (whew!), just a different set of defaults and apps scripted up, with a dash of container goodies so can still also use Ubuntu. 
+This is not a new distribution (whew!), just a different set of defaults and apps scripted up, with a dash of container goodies so I can still also use Ubuntu. 
 
 The intended audience are cloud leaning developers who use Linux desktops, the niche of the niche.
 Realistically I don't want to maintain this longer than I have to, this is a crutch that I need and then at some point I'll end up on the default desktop.
-The cloud image I'll need until I retire because old habits die hard and it's good. Let's open our minds and do a mashup ...
+The cloud image I'll need until I retire because old habits die hard and it's good.
+If you're looking for a more reliable way to do this then [Jim Campbell's ansible playbook](https://github.com/j1mc/ansible-silverblue) is probably a good place to start.
+Let's open our minds and do a mashup ...
 
 ## Scope
 
