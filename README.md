@@ -96,6 +96,8 @@ You can pull from any registry:
 
 Follow the instructions from distrobox to use your new userspace. Whichever distro you choose, you can use the "native" package manager in the box to install applications (including graphical ones), and we generally recommend doing most of your work in distrobox. You can also add the following config into your gnome-terminal to launch into your distrobox when you open a terminal: 
 
+![Screenshot from 2022-02-02 17-06-11](https://user-images.githubusercontent.com/1264109/152247472-07d90f41-9601-4158-a10d-7bf046f55782.png)
+
 Using any distribution as a container via your terminal is a very powerful feature as you can now use an install just about any package from any where. Check the [distrobox homepage](https://distrobox.privatedns.org/) for more info.
 
 Note: Silverblue comes with [toolbx](https://github.com/containers/toolbox) by default, and it's still included. Check the `images/` directory for instructions on building your own images. Both projects use podman so it's a matter of taste, the base tech is the same. 
