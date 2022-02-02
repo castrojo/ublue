@@ -82,64 +82,23 @@ To revert (and I mean, totally revert, you've been warned):
 
 1. `./reset.sh` will reset the dconf database and ostree back to defaults and reboot you back to the stock Fedora experience. 
 
-### Installing a toolbx
+### Distrobox, your new user space
 
-[Toolbx](https://github.com/containers/toolbox) is a neat tool that lets you run Linux distro cloud containers and then enter into them. 
-It's in the process of being renamed from "toolbox" to "toolbx" so there's still some confusion as of now so just FYI.
-The neater magic is it also transparently mounts your home directory for you, so we'll use an Ubuntu cloud image as our "userspace" in a terminal, similar to the how WSL does it.
-This enables us to bring all our old scripts, dotfiles with us into this new workflow, we want to be more efficient not force reset your unix brain. 
+We've included [distrobox](https://github.com/89luca89/distrobox). 
+We'll use this to create our Ubuntu userspace:
 
-By default doing `toolbox enter` will prompt you to create a Fedora container and take you inside.
-This works fine and even installing graphical applications works!
+    distrobox-create -i docker.io/library/ubuntu:20.04 -n ubuntu
 
-`./99-build-images.sh` will build all of the images in the `images/` folder. Right now that includes:
+You can use [any distribution image](https://github.com/89luca89/distrobox/blob/main/docs/compatibility.md#containers-distros) that is supported by distrobox (this is a bunch!) 
+You can pull from any registry:
 
-| Distro | Release | Tag |
-| ------ | ------- | --- |
-| Arch   | latest  | arch:latest |
-| Debian | bullseye | debian:bullseye |
-| Debian | sid | debian:sid |
-| Ubuntu | 18.04 | ubuntu:18.04 |
-| Ubuntu | 20.04 | ubuntu:20.04 |
-| Ubuntu | 22.04 | ubuntu:22.04 | 
+    distrobox-create -i public.ecr.aws/amazonlinux/amazonlinux:2022 -n amazon
 
-To build a single image:
+Follow the instructions from distrobox to use your new userspace. Whichever distro you choose, you can use the "native" package manager in the box to install applications (including graphical ones), and we generally recommend doing most of your work in distrobox. You can also add the following config into your gnome-terminal to launch into your distrobox when you open a terminal: 
 
-```bash
-# Build Ubuntu 20.04
-podman build -t ubuntu:20.04 -f images/ubuntu/20.04/Containerfile
-```
+Using any distribution as a container via your terminal is a very powerful feature as you can now use an install just about any package from any where. Check the [distrobox homepage](https://distrobox.privatedns.org/) for more info.
 
-One the images are built, you can create the container by tag, i.e.,
-
-```bash
-# Create a container named my-project
-toolbox create --image ubuntu-20.04 -c my-project
-```
-
-You can then do `toolbox enter my-project` to go into the toolbx. 
-
-If you set the toolboxes to launch on gnome-terminal execution you can have a more seamless experience:  
-
-![toolbox](https://user-images.githubusercontent.com/1264109/139595535-fd1b8955-1b4a-4b70-ac9b-a4287c590cfb.png)
-
-See the [Fedora documentation on keyboard shortcuts](https://docs.fedoraproject.org/en-US/quick-docs/proc_setting-key-shortcut/) to assign the terminals to shortcuts.
-A rememberable one would be to keep `Ctrl-Alt-T` as the default non-toolbox terminal so you can do host things, and then `Ctrl-Alt-U` for the terminal that executes `toolbox enter ubuntu`.
-The U stands for Ubuntu :smile:
-Over time you may find yourself needing the host terminal less and less, expect to be very dependent on it if you're new. 
-
-NOTE: Graphical versions of applications WORK in these containers, so if there's
-an app you need in Ubuntu that is not in Fedora or something then apt install it
-and fire it up! 
-
-### Distrobox, alternative to toolbx (Optional)
-
-If maintaining your images is too annoying I've included [distrobox](https://github.com/89luca89/distrobox). 
-This project, inspired by toolbx takes an alternative approach by using unmodified distro cloud images. 
-
-Both projects use podman so it's a matter of taste, the base tech is the same.
-
-Run `bits/distrobox` to install it. 
+Note: Silverblue comes with [toolbx](https://github.com/containers/toolbox) by default, and it's still included. Check the `images/` directory for instructions on building your own images. Both projects use podman so it's a matter of taste, the base tech is the same. 
 
 ## VSCode and other developer notes
 
@@ -153,9 +112,6 @@ This area needs work and is changing quickly!
 
 ## Todo
 
-- https://github.com/containers/toolbox is crucial to this.
-	- People have [PRed images for Ubuntu](https://github.com/containers/toolbox/pull/878) and [other distros](https://github.com/containers/toolbox/pull/861) but the default (and more reliable) toolbx experience is still Fedora. Over time I hope more distributions are adopted for this model, as it would be nice to have all the cloud-provider specific distros for people who need them, etc.
-  - Basically, have as many options as users can have on WSL. :D
 - Still can't set ctrl-alt-t to open a terminal lol. 
 - Martin Pitt [has a script](https://piware.de/gitweb/?p=bin.git;a=blob;f=build-debian-toolbox) for building your own Debian/Ubuntu images on the spot if you want to do it by hand. (This is what I'm using now)
 - Speaking of, here's advanced mode, and entire developer workflow living in git that can be splatted onto a machine:

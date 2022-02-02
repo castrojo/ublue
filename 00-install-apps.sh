@@ -52,7 +52,8 @@ rpm-ostree --idempotent install \
     gnome-shell-extension-dash-to-dock \
     gnome-shell-extension-gsconnect \
     libratbag-ratbagd \
-    gnome-tweaks
+    gnome-tweaks \
+    distrobox
 
 echo "You should reboot!"
 exit 0;
