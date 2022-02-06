@@ -105,11 +105,12 @@ Using any distribution as a container via your terminal is a very powerful featu
 Note: Silverblue comes with [toolbx](https://github.com/containers/toolbox) by default, and it's still included. Check the `images/` directory for instructions on building your own images. Both projects use podman so it's a matter of taste, the base tech is the same. 
 
 ## VSCode and other developer notes
+IDEs expect access to lots of stuff, we can either follow [this guide](https://github.com/89luca89/distrobox/blob/main/docs/posts/integrate_vscode_distrobox.md) to install it inside a Distrobox 
+or using Flatpaks. Alternatively we compromise by overlaying vscode and directly adding the repo from upstream.
+If using Toolbx instead of Distrobox, check out [this post](https://discussion.fedoraproject.org/t/toolbox-and-visual-studio-code-remote-containers/27987) on setting up vscode with toolboxes, 
+it might be useful for your workflow and is tracking issues with the various projects on what it would take to have vscode running as a flatpak but being able to directly access your toolboxes.
 
-IDEs expect access to lots of stuff, so we compromise by overlaying vscode and directly adding the repo from upstream.
-Check out [this post](https://discussion.fedoraproject.org/t/toolbox-and-visual-studio-code-remote-containers/27987) on setting up vscode with toolboxes, it might be useful for your workflow and is tracking issues with the various projects on what it would take to have vscode running as a flatpak but being able to directly access your toolboxes.
-
-When you're inside a toolbx you might be confused that you can't run containers from inside the toolbx. You can `alias podman="flatpak-spawn --host podman"` to let you call podman so you can fire up containers while still in your familiar toolbx.
+When you're inside a distrobox or a  toolbx you might be confused that you can't run containers from inside the toolbx. You can `alias podman="flatpak-spawn --host podman"` to let you call podman so you can fire up containers while still in your familiar toolbx.
 Thanks [Adam Kaplan](https://twitter.com/AdamBKaplan/status/1453059428677296130)!
 
 This area needs work and is changing quickly!
