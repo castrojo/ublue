@@ -4,6 +4,8 @@ TLDR: I've been using Ubuntu since 2004, however I want a [modern image based de
 Can I have my cake and eat it too?
 This is not a new distribution (whew!), just a different set of defaults and apps scripted up, with a dash of container goodies so I can still also use Ubuntu. 
 
+- Check out my guest appearance on the [Linux Downtime podcast](https://www.youtube.com/embed/CiyjZwd4Jrs) to see how I ended up here.
+
 The intended audience are cloud leaning developers who use Linux desktops, the niche of the niche.
 Realistically I don't want to maintain this longer than I have to, this is a crutch that I need and then at some point I'll end up on the default desktop.
 The cloud image I'll need until I retire because old habits die hard and it's good.
