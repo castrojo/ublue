@@ -5,6 +5,7 @@ Can I have my cake and eat it too?
 This is not a new distribution (whew!), just a different set of defaults and apps scripted up, with a dash of container goodies so I can still also use Ubuntu. 
 
 - Check out my guest appearance on the [Linux Downtime podcast](https://www.youtube.com/embed/CiyjZwd4Jrs) to see how I ended up here.
+- Check out [awesome-immutable](https://castrojo.github.io/awesome-immutable/) for a general list of systems like this, there's different ways to do this.
 
 The intended audience are cloud leaning developers who use Linux desktops, the niche of the niche.
 Realistically I don't want to maintain this longer than I have to, this is a crutch that I need and then at some point I'll end up on the default desktop.
@@ -19,7 +20,7 @@ This POC is using Silverblue, but do check out [openSUSE's MicroOS](https://micr
 
 ![Screenshot from 2021-11-06 16-06-50](https://user-images.githubusercontent.com/1264109/140622498-81d00c9a-fa59-4ea0-9393-7d33511d59a3.png)
 
-If you want a more in depth view of what's happening, here's a [live video of me convincing Marco to try this](https://www.twitch.tv/videos/1193532435?t=00h22m32s) where we walk through the process, and [a tour with Wimpy](https://www.twitch.tv/videos/1196023856) where we go into more detail. 
+If you want a more in depth view of what's happening I encourage you to take this apart and see what it's doing so you can learn about what I'm trying to do, and of course let me know about what you're building so we can celebrate. 
 
 
 ## Features
