@@ -26,9 +26,3 @@ current_profile=$(dconf list /org/gnome/terminal/legacy/profiles:/ | head -n1)
 # TODO(mc): We /could/ prompt the user if they want to keep the current font, use Ubuntu Mono, or Ubuntu Mono Nerd Font?
 dconf write /org/gnome/terminal/legacy/profiles:/${current_profile}use-system-font false
 dconf write /org/gnome/terminal/legacy/profiles:/${current_profile}font "'UbuntuMono Nerd Font 12'"
-
-# Adjust flatpak permissions so PWAs work on chromium-based browsers
-#
-flatpak override --user --filesystem=~/.local/share/applications --filesystem=~/.local/share/icons com.brave.Browser
-flatpak override --user --filesystem=~/.local/share/applications --filesystem=~/.local/share/icons com.google.Chrome
-flatpak override --user --filesystem=~/.local/share/applications --filesystem=~/.local/share/icons com.microsoft.Edge
