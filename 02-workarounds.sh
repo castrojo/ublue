@@ -8,6 +8,13 @@
 #
 # Set a community wallpaper
 mkdir -p /var/home/$USER/.local/share/backgrounds
+
+# A picture of the Lagoon Nebula by Charles Bonafilia
+# It captures the mix of blue and orange, a nice mix of two different distributions 
+cp ./files/charles.bonafilia.lagoon.nebula.jpg /var/home/$USER/.local/share/backgrounds/
+gsettings set org.gnome.desktop.background picture-uri file:///var/home/$USER/.local/share/backgrounds/charles.bonafilia.lagoon.nebula.jpg
+
+# Val's wallpaper
 cp ./files/silvermorning.jpg /var/home/$USER/.local/share/backgrounds/
 gsettings set org.gnome.desktop.background picture-uri file:///var/home/$USER/.local/share/backgrounds/silvermorning.jpg
 
