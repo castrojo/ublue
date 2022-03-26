@@ -1,6 +1,9 @@
 #!/bin/bash
 # This for sure doesn't work, just dumping stuff in here while I reorganize
 
+BITS=./bits
+source $BITS/common
+
 # Enable beta repo
 flatpak_install_remote flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
 flatpak_install flathub-beta applications-beta.list
