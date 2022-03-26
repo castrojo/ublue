@@ -16,7 +16,8 @@ gsettings set org.gnome.desktop.background picture-uri file:///var/home/$USER/.l
 
 # Val's wallpaper
 cp ./files/silvermorning.jpg /var/home/$USER/.local/share/backgrounds/
-gsettings set org.gnome.desktop.background picture-uri file:///var/home/$USER/.local/share/backgrounds/silvermorning.jpg
+# Uncomment the next line to use this one as the default
+#gsettings set org.gnome.desktop.background picture-uri file:///var/home/$USER/.local/share/backgrounds/silvermorning.jpg
 
 # Fonts
 #
