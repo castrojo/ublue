@@ -13,6 +13,7 @@ mkdir -p /var/home/$USER/.local/share/backgrounds
 # It captures the mix of blue and orange, a nice mix of two different distributions 
 cp ./files/charles.bonafilia.lagoon.nebula.jpg /var/home/$USER/.local/share/backgrounds/
 gsettings set org.gnome.desktop.background picture-uri file:///var/home/$USER/.local/share/backgrounds/charles.bonafilia.lagoon.nebula.jpg
+gsettings set org.gnome.desktop.background picture-options "stretched"
 
 # Val's wallpaper
 cp ./files/silvermorning.jpg /var/home/$USER/.local/share/backgrounds/
