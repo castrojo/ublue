@@ -1,12 +1,10 @@
-# Workarounds
+# Integrations
 # Stuff that works but probably needs a cleaner way to install
-
-# If you need Docker in addition to podman
-#rpm-ostree install moby-engine docker-compose
 
 # Wallpaper
 #
 # Set a community wallpaper
+set -eux
 mkdir -p /var/home/$USER/.local/share/backgrounds
 
 # A picture of the Lagoon Nebula by Charles Bonafilia
@@ -35,3 +33,10 @@ current_profile=$(dconf list /org/gnome/terminal/legacy/profiles:/ | head -n1)
 # TODO(mc): We /could/ prompt the user if they want to keep the current font, use Ubuntu Mono, or Ubuntu Mono Nerd Font?
 dconf write /org/gnome/terminal/legacy/profiles:/${current_profile}use-system-font false
 dconf write /org/gnome/terminal/legacy/profiles:/${current_profile}font "'UbuntuMono Nerd Font 12'"
+
+# Make distrobox images and shortcuts
+# Thanks @89luca89 
+distrobox-create -Y -i public.ecr.aws/ubuntu/ubuntu:22.04 -n ubuntu-toolbox-22
+distrobox-create -Y -i registry.fedoraproject.org/fedora-toolbox:35 --name fedora-toolbox-35
+./bits/distrobox-terminal-profile.sh -n ubuntu-22 -c ubuntu-22 -s "<Primary><Alt>u" 
+./bits/distrobox-terminal-profile.sh -n fedora-toolbox-35 -c fedora-toolbox-35 -s "<Primary><Alt>t" 
