@@ -32,7 +32,7 @@ fc-cache
 current_profile=$(dconf list /org/gnome/terminal/legacy/profiles:/ | head -n1)
 # TODO(mc): We /could/ prompt the user if they want to keep the current font, use Ubuntu Mono, or Ubuntu Mono Nerd Font?
 dconf write /org/gnome/terminal/legacy/profiles:/${current_profile}use-system-font false
-dconf write /org/gnome/terminal/legacy/profiles:/${current_profile}font "'UbuntuMono Nerd Font 12'"
+dconf write /org/gnome/terminal/legacy/profiles:/${current_profile}font "'UbuntuMono Nerd Font 14'"
 
 # Make distrobox images and shortcuts
 # Thanks @89luca89 
