@@ -69,7 +69,7 @@ YOLO not my circus, not my monkeys.
 1. Get a coffee, and then reboot your computer (Important!)
    - Read the [distrobox documentation](https://distrobox.privatedns.org/) this will be useful later on. 
 1. (Optional): Run `./01-desktop.sh`: This will change the desktop to a more Ubuntu setup, if you prefer vanilla GNOME don't run this.
-1. (Optional): Run `./02-workarounds.sh`: This will set up a wallpaper and the Ubuntu fonts 
+1. (Optional): Run `./02-integrations.sh`: This will set up a wallpaper and the Ubuntu fonts, and set up two distroboxes, ctrl-alt-t for Fedora, and ctrl-alt-u for Ubuntu, adjust to your preference. 
 3. (Optional): Run the various scripts in `bits/` to install vscode, tailscale, and the Ubuntu themes. We'll add little mini scripts here that are convenient for us.    
 
 Make something better, turn on GitHub sponsors, and I'll be the first one sending you money on the regular.
