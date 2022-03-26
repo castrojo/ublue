@@ -12,21 +12,26 @@ io.github.celluloid_player.Celluloid
 com.github.tchx84.Flatseal
 com.mattjakeman.ExtensionManager
 org.gnome.Firmware
+org.fedoraproject.MediaWriter
+
+# Gaming Specific
+#com.discordapp.Discord
+#com.obsproject.Studio
+#com.valvesoftware.Steam
+#org.freedesktop.Platform.VulkanLayer.MangoHud
+#org.freedesktop.Platform.VulkanLayer.OBSVkCapture
+#com.valvesoftware.Steam.Utility.gamescope
+#com.usebottles.bottles
 
 # Other goodies
-#
 #com.belmoussaoui.Obfuscate
-#com.discordapp.Discord
 #com.getmailspring.Mailspring
-#com.obsproject.Studio
 #com.slack.Slack
 #com.spotify.Client
 #com.todoist.Todoist
-#com.valvesoftware.Steam
 #de.haeckerfelix.Fragments
 #org.audacityteam.Audacity
 #org.flameshot.Flameshot
-#org.freedesktop.Piper
 #org.gimp.GIMP
 #org.inkscape.Inkscape
 #org.kde.krita
