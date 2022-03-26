@@ -1,7 +1,7 @@
 #!/bin/bash
 # This for sure doesn't work, just dumping stuff in here while I reorganize
 
-BITS=./bits
+BITS=../bits
 source $BITS/common
 
 # Enable beta repo
