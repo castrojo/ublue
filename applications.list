@@ -12,7 +12,6 @@ io.github.celluloid_player.Celluloid
 com.github.tchx84.Flatseal
 com.mattjakeman.ExtensionManager
 org.gnome.Firmware
-org.fedoraproject.MediaWriter
 
 # Gaming Specific
 #com.discordapp.Discord
