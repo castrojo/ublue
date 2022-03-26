@@ -12,14 +12,6 @@ echo "Installing Flatpak(s)..."
 flatpak_install_remote flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak_install flathub applications.list
 
-read -n 1 -p "Do you wish to use Flathub beta? (Y/n) " beta
-echo ""
-case $beta in
-    [Yy]* ) 
-        flatpak_install_remote flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
-        flatpak_install flathub-beta applications-beta.list
-esac
-
 # Configure Flatpak automatic upgrades
 source $BITS/flatpak_automatic_updates
 
@@ -47,14 +39,9 @@ echo "Installing layered packages..."
 rpm-ostree --idempotent install \
     gnome-shell-extension-appindicator \
     gnome-shell-extension-sound-output-device-chooser \
-    gnome-shell-extension-gamemode \
-    gnome-shell-extension-frippery-move-clock \
     gnome-shell-extension-dash-to-dock \
-    gnome-shell-extension-gsconnect \
-    libratbag-ratbagd \
     gnome-tweaks \
     distrobox
 
 echo "You should reboot!"
 exit 0;
-
