@@ -10,7 +10,7 @@ This is not a new distribution (whew!), just a different set of defaults and app
 The intended audience are cloud leaning developers who use Linux desktops, the niche of the niche.
 However it's also a great gaming setup, traditional desktop, or whatever you're using now because it's also just Fedora.
 If you're looking for a more reliable way to do this then [Jim Campbell's ansible playbook](https://github.com/j1mc/ansible-silverblue) is probably a good place to start.
-Let's open our minds and do a mashup ...
+Let's open our minds and do a mashup ... Here's a video tour, or keep scrolling down!
 
 [![Watch Martin and me!](https://img.youtube.com/vi/vhaQPAuOi9E/maxresdefault.jpg)](https://youtu.be/vhaQPAuOi9E)
 
