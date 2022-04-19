@@ -28,6 +28,8 @@ If you want a more in depth view of what's happening I encourage you to take thi
 
 [@mrckndt's playbook](https://github.com/mrckndt/silverblue-playbook) comes with some nice features that fit with our flow:
 
+- Works on Fedora Silverblue 35
+  - 36 mostly works other than the dash-to-dock extension, once that gets sorted that should work fine 
 - rpm-ostree is set to stage updates by default, so it just does it automatically.
 - systemd service units to update all the flatpaks four times a day to match the update cadence of Ubuntu 
 
