@@ -368,7 +368,7 @@ dconf write /org/gnome/settings-daemon/plugins/media-keys/calculator-static "['X
 dconf write /org/gnome/settings-daemon/plugins/media-keys/control-center "['']"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/control-center-static "['XF86Tools']"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "@as []"
-dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Control><Alt>t'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Primary><Alt>t'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'gnome-terminal'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'Launch Terminal'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/decrease-text-size "['']"
