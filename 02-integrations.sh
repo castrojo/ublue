@@ -35,8 +35,12 @@ dconf write /org/gnome/terminal/legacy/profiles:/${current_profile}use-system-fo
 dconf write /org/gnome/terminal/legacy/profiles:/${current_profile}font "'UbuntuMono Nerd Font 14'"
 
 # Make distrobox images and shortcuts
-# Thanks @89luca89 
+# Thanks @89luca89
+# This isn't idempotent!
+# So if you mess this up run `dconf reset -f /org/gnome/terminal/legacy/profiles:/`
+# to reset the profiles back to default
+
 distrobox-create -Y -i public.ecr.aws/ubuntu/ubuntu:22.04 -n ubuntu-toolbox-22
 distrobox-create -Y -i registry.fedoraproject.org/fedora-toolbox:36 --name fedora-toolbox-36
 ./bits/distrobox-terminal-profile.sh -n ubuntu-toolbox-22 -c ubuntu-toolbox-22 -s "<Primary><Alt>u" 
-./bits/distrobox-terminal-profile.sh -n fedora-toolbox-36 -c fedora-toolbox-36 -s "<Primary><Alt>t" 
+./bits/distrobox-terminal-profile.sh -n fedora-toolbox-36 -c fedora-toolbox-36 -s "<Primary><Alt>f" 
