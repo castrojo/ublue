@@ -78,6 +78,16 @@ PROFILE_UUID=$(cat /proc/sys/kernel/random/uuid)
 
 # Gemerate the dconf file for terminal profile
 DCONF_PROFILE=$(dconf dump /org/gnome/terminal/legacy/profiles:/)
+
+if ! echo "$DCONF_PROFILE" | grep 'list='; then
+	DCONF_PROFILE="
+[/]
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9']
+
+$DCONF_PROFILE
+"
+fi
+
 DCONF_PROFILE=$(echo "$DCONF_PROFILE" | sed "s|list=\[|list=\['$PROFILE_UUID',|g")
 DCONF_PROFILE="$DCONF_PROFILE
 
