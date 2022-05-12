@@ -28,12 +28,9 @@ If you want a more in depth view of what's happening I encourage you to take thi
 
 [@mrckndt's playbook](https://github.com/mrckndt/silverblue-playbook) comes with some nice features that fit with our flow:
 
-- Works on Fedora Silverblue 35
-  - Works on 36 other than the dash-to-dock extension, which has not been updated to the newer GNOME. You will need to [build the ubuntu-dock branch](https://github.com/micheleg/dash-to-dock/tree/ubuntu-dock) by hand to get the dock. 
-  - This is a critical part of the experience, as soon as the package in distro is updated I'll make a note here.
-  - PRs welcomed if you know of a programatic way to install it. 
-- rpm-ostree is set to stage updates by default, so it just does it automatically.
-- systemd service units to update all the flatpaks four times a day to match the update cadence of Ubuntu 
+- Works on Fedora Silverblue 35 and 36
+- rpm-ostree is set to stage updates by default, so it just does it automatically
+- systemd service units to update all the flatpaks four times a day to match the update cadence of Ubuntu
 
 If this scares you then you're in the wrong place, if you're ready to not only burn the ships but torpedo them just to make sure we don't end up back in the old world, read on.
 
