@@ -26,29 +26,31 @@ If you want a more in depth view of what's happening I encourage you to take thi
 
 :heart: :heart: :heart: WARNING: You are changing system defaults and pushing more into the container land than usual, please be respectful of our OSS family and be thoughtful before filing issues with either Fedora or the maintainers of the cloud images. Thanks! 
 
-[@mrckndt's playbook](https://github.com/mrckndt/silverblue-playbook) comes with some nice features that fit with our flow:
+After installing all the components, you will get:
 
-- Works on Fedora Silverblue 35 and 36
+- A Fedora Silverblue installation with an Ubuntu style desktop
+  - Works on Fedora Silverblue 35 and 36
+- Fedora and Ubuntu userspaces provided by [distrobox](https://github.com/89luca89/distrobox)
+  - Ctrl-alt-t will open a host terminal. (Use this for rpm-ostree and flatpak operations)
+  - Ctrl-alt-u will open an Ubuntu container. (Use this for every day usage)
+  - Ctrl-alt-f will open a Fedora container. (Use this for every day usage)
+- All the proper multimedia and browser stuff installed so all media works out of the box
 - rpm-ostree is set to stage updates by default, so it just does it automatically
 - systemd service units to update all the flatpaks four times a day to match the update cadence of Ubuntu
-- All the proper multimedia and browser stuff installed so all media works out of the box
-
-If this scares you then you're in the wrong place, if you're ready to not only burn the ships but torpedo them just to make sure we don't end up back in the old world, read on.
-
 - Keep Ubuntu app defaults and panel layout
   - While this is a mashup, let's respect Ubuntu's choices here by default, you know how to change stuff
   - But add apps that the intended audience love and need like vscode
 - Optionally install:
   - Work apps -  Zoom, Slack, Standard Notes, Signal, Element, etc.
   - Fun apps - Discord and Steam (Last release of flatpak fixed many of Steam's issues, it works much better now, try it)
-  - The excellent [Extensions Manager](https://www.omgubuntu.co.uk/2022/01/gnome-extension-manager-app-easy-install) application is included to manage your GNOME extensions. Note that extensions.gnome.org won't work due to sandboxing, so this is a work around until all that is sorted in the future.
+- The excellent [Extensions Manager](https://www.omgubuntu.co.uk/2022/01/gnome-extension-manager-app-easy-install) application is included to manage your GNOME extensions. Note that extensions.gnome.org won't work due to sandboxing, so this is a work around until all that is sorted in the future.
 
 I replaced the distro Firefox with the flatpak from upstream.
 As per upstream Silverblue, you want your apps to be either in containers (where you install them via apt/dnf) and your desktop apps to come via flatpaks. 
 
 Maintenance: The gotcha is you gotta shutdown/reboot your PC on the regular (whatever matches your workflow).
 This is the price the UNIX gods demand for the removal of `dpkg-reconfigure -a` from your life.
-I just shut it down at the end of each workday. Your reward is little to zero host OS maintenance. 
+I just shut it down at the end of each workday. Your reward is little-to-zero host OS maintenance. 
 
 ### Desktop Changes
 
@@ -74,7 +76,7 @@ YOLO not my circus, not my monkeys.
 7. Get a coffee, and then reboot your computer (Important!)
    - Read the [distrobox documentation](https://distrobox.privatedns.org/) this will be useful later on. 
 8. (Optional): Run `./01-desktop.sh`: This will change the desktop to a more Ubuntu setup, if you prefer vanilla GNOME don't run this.
-9. (Optional): Run `./02-integrations.sh`: This will set up a wallpaper and the Ubuntu fonts, and set up two distroboxes, ctrl-alt-t for Fedora, and ctrl-alt-u for Ubuntu, adjust to your preference. 
+9. (Optional): Run `./02-integrations.sh`: This will set up a wallpaper and the Ubuntu fonts, and set up the distroboxes and keyboard shortcuts
 10. (Optional): Run the various scripts in `bits/` to install vscode, tailscale, and the Ubuntu themes. We'll add little mini scripts here that are convenient for us.    
 
 Make something better, turn on GitHub sponsors, and I'll be the first one sending you money on the regular.
@@ -110,10 +112,6 @@ IDEs expect access to lots of stuff, we can either follow [this guide](https://g
 Alternatively we compromise by overlaying vscode and directly adding the repo from upstream.
 
 This area needs work and is changing quickly!
-
-## Todo
-
-- Still can't set ctrl-alt-t to open a terminal lol. 
 
 ### Acknowledgements
 
