@@ -31,6 +31,7 @@ If you want a more in depth view of what's happening I encourage you to take thi
 - Works on Fedora Silverblue 35 and 36
 - rpm-ostree is set to stage updates by default, so it just does it automatically
 - systemd service units to update all the flatpaks four times a day to match the update cadence of Ubuntu
+- All the proper multimedia and browser stuff installed so all media works out of the box
 
 If this scares you then you're in the wrong place, if you're ready to not only burn the ships but torpedo them just to make sure we don't end up back in the old world, read on.
 
@@ -64,16 +65,17 @@ YOLO not my circus, not my monkeys.
 
 ## Instructions
 
-1. Install [Fedora Silverblue](https://docs.fedoraproject.org/en-US/fedora-silverblue/installation/) - probably don't do this on an existing system, just browse the repo and cherry pick if you're interested. 
-1. On first boot, clone this repo: `git clone https://github.com/castrojo/ublue.git`
-1. `cd ublue`
-1. Edit the `applications.list` file to your liking, I've chosen some decent defaults.
-1. Run the first part of the script: `./00-install-apps.sh`
-1. Get a coffee, and then reboot your computer (Important!)
+1. Install [Fedora Silverblue](https://docs.fedoraproject.org/en-US/fedora-silverblue/installation/) - probably don't do this on an existing system, just browse the repo and cherry pick if you're interested.
+2. Make sure you're up to date with `rpm-ostree update` and a reboot if necessary 
+3. Clone this repo: `git clone https://github.com/castrojo/ublue.git`
+4. `cd ublue`
+5. Edit the `applications.list` file to your liking, I've chosen some decent defaults.
+6. Run the first part of the script: `./00-install-apps.sh`
+7. Get a coffee, and then reboot your computer (Important!)
    - Read the [distrobox documentation](https://distrobox.privatedns.org/) this will be useful later on. 
-1. (Optional): Run `./01-desktop.sh`: This will change the desktop to a more Ubuntu setup, if you prefer vanilla GNOME don't run this.
-1. (Optional): Run `./02-integrations.sh`: This will set up a wallpaper and the Ubuntu fonts, and set up two distroboxes, ctrl-alt-t for Fedora, and ctrl-alt-u for Ubuntu, adjust to your preference. 
-3. (Optional): Run the various scripts in `bits/` to install vscode, tailscale, and the Ubuntu themes. We'll add little mini scripts here that are convenient for us.    
+8. (Optional): Run `./01-desktop.sh`: This will change the desktop to a more Ubuntu setup, if you prefer vanilla GNOME don't run this.
+9. (Optional): Run `./02-integrations.sh`: This will set up a wallpaper and the Ubuntu fonts, and set up two distroboxes, ctrl-alt-t for Fedora, and ctrl-alt-u for Ubuntu, adjust to your preference. 
+10. (Optional): Run the various scripts in `bits/` to install vscode, tailscale, and the Ubuntu themes. We'll add little mini scripts here that are convenient for us.    
 
 Make something better, turn on GitHub sponsors, and I'll be the first one sending you money on the regular.
 Bring the cloud native dream to the people.
