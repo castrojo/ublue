@@ -38,5 +38,5 @@ dconf write /org/gnome/terminal/legacy/profiles:/${current_profile}font "'Ubuntu
 # Thanks @89luca89 
 distrobox-create -Y -i public.ecr.aws/ubuntu/ubuntu:22.04 -n ubuntu-toolbox-22
 distrobox-create -Y -i registry.fedoraproject.org/fedora-toolbox:36 --name fedora-toolbox-36
-./bits/distrobox-terminal-profile.sh -n ubuntu-toolbox-20 -c ubuntu-toolbox-20 -s "<Primary><Alt>u" 
-./bits/distrobox-terminal-profile.sh -n fedora-toolbox-35 -c fedora-toolbox-35 -s "<Primary><Alt>t" 
+./bits/distrobox-terminal-profile.sh -n ubuntu-toolbox-22 -c ubuntu-toolbox-22 -s "<Primary><Alt>u" 
+./bits/distrobox-terminal-profile.sh -n fedora-toolbox-36 -c fedora-toolbox-36 -s "<Primary><Alt>t" 
