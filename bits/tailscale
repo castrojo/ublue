@@ -6,6 +6,8 @@ set -u
 if [ ! -e /etc/yum.repos.d/tailscale.repo ]; then
     echo "Installing repo..."
     sudo curl -s https://pkgs.tailscale.com/stable/fedora/tailscale.repo -o /etc/yum.repos.d/tailscale.repo > /dev/null
+    # Disable repo_gpgcheck, which doesn't work on Silverblue 36+
+    sudo sed -i 's/repo_gpgcheck=1/repo_gpgcheck=0/' /etc/yum.repos.d/tailscale.repo
 fi
 
 # Check if tailscale is already installed
