@@ -8,6 +8,7 @@ org.libreoffice.LibreOffice
 org.mozilla.firefox
 org.mozilla.Thunderbird
 org.freedesktop.Platform.ffmpeg-full/x86_64/21.08
+org.freedesktop.Platform.GStreamer.gstreamer-vaapi
 io.github.celluloid_player.Celluloid
 com.github.tchx84.Flatseal
 com.mattjakeman.ExtensionManager
