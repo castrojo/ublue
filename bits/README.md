@@ -10,6 +10,7 @@ Run these to do the following:
 | ------------------ | --------------------------------------------------------------- |
 | 1password          | Install 1password                                               |
 | distrobox          | Install distrobox, an alternative to toolbx                     |
+| distrobox-terminal-profile | Set up distroboxes in gnome-terminal (It's awesome)     | 
 | rancher-desktop.sh | Install [Rancher Desktop](https://rancherdesktop.io/)           |
 | starship-rs        | Install the [Starship](https://starship.rs/) cross-shell prompt |
 | tailscale          | Install the [Tailscale VPN](https://tailscale.com/)             |
