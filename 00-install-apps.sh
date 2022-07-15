@@ -35,15 +35,9 @@ if rpm-ostree override remove firefox > /dev/null; then
     echo "Removed Firefox from base layer."
 fi
 
-# TODO: pull these from an external list?
 # --idempotent seems to fix running this multiple times
 echo "Installing layered packages..."
-rpm-ostree --idempotent install \
-    gnome-shell-extension-appindicator \
-    gnome-shell-extension-sound-output-device-chooser \
-    gnome-shell-extension-dash-to-dock \
-    gnome-tweaks \
-    distrobox
+cat layered-packages.list | rpm-ostree --idempotent install `xargs`
 
 echo "You should reboot!"
 exit 0;
