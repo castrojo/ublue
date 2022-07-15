@@ -14,6 +14,11 @@ com.github.tchx84.Flatseal
 com.mattjakeman.ExtensionManager
 org.gnome.Firmware
 
+# Browsers
+#com.brave.Browser
+#com.google.Chrome
+#com.microsoft.Edge
+
 # Gaming Specific
 #com.discordapp.Discord
 #com.obsproject.Studio
