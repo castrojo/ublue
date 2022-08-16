@@ -19,11 +19,13 @@ org.gnome.Firmware
 #com.google.Chrome
 #com.microsoft.Edge
 
-# Gaming Specific
+# Gaming and Streaming Specific
 #com.discordapp.Discord
 #com.obsproject.Studio
+#com.obsproject.Studio.Plugin.Gstreamer
 #com.valvesoftware.Steam
 #org.freedesktop.Platform.VulkanLayer.MangoHud
+#org.freedesktop.Platform.GStreamer.gstreamer-vaapi
 #org.freedesktop.Platform.VulkanLayer.OBSVkCapture
 #com.valvesoftware.Steam.Utility.gamescope
 #com.usebottles.bottles
