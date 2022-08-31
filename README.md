@@ -12,7 +12,7 @@ However it's also a great gaming setup, traditional desktop, or whatever you're 
 If you're looking for a more reliable way to do this then [Jim Campbell's ansible playbook](https://github.com/j1mc/ansible-silverblue) is probably a good place to start.
 Let's open our minds and do a mashup ... Here's a video tour, or keep scrolling down!
 
-[![Overview!](https://img.youtube.com/vi/PM5exNztbXE/maxresdefault.jpg)](https://youtu.be/PM5exNztbXE)
+[![Video Overview](https://img.youtube.com/vi/PM5exNztbXE/maxresdefault.jpg)](https://youtu.be/PM5exNztbXE)
 
 ## Scope
 
