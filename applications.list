@@ -25,7 +25,7 @@ org.gnome.Firmware
 #com.obsproject.Studio.Plugin.Gstreamer
 #com.valvesoftware.Steam
 #org.freedesktop.Platform.VulkanLayer.MangoHud
-#org.freedesktop.Platform.GStreamer.gstreamer-vaapi
+#org.freedesktop.Platform.GStreamer.gstreamer-vaapi//22.08
 #org.freedesktop.Platform.VulkanLayer.OBSVkCapture
 #com.valvesoftware.Steam.Utility.gamescope
 #com.usebottles.bottles
