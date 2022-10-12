@@ -7,8 +7,8 @@ org.gustavoperedo.FontDownloader
 org.libreoffice.LibreOffice
 org.mozilla.firefox
 org.mozilla.Thunderbird
-org.freedesktop.Platform.ffmpeg-full/x86_64/21.08
-org.freedesktop.Platform.GStreamer.gstreamer-vaapi
+org.freedesktop.Platform.ffmpeg-full//22.08
+org.freedesktop.Platform.GStreamer.gstreamer-vaapi//22.08
 io.github.celluloid_player.Celluloid
 com.github.tchx84.Flatseal
 com.mattjakeman.ExtensionManager
