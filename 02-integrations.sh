@@ -41,6 +41,6 @@ dconf write /org/gnome/terminal/legacy/profiles:/${current_profile}font "'Ubuntu
 # to reset the profiles back to default
 
 distrobox-create -Y -i public.ecr.aws/ubuntu/ubuntu:22.04 -n ubuntu-toolbox-22
-distrobox-create -Y -i registry.fedoraproject.org/fedora-toolbox:36 --name fedora-toolbox-36
+distrobox-create -Y -i registry.fedoraproject.org/fedora-toolbox:37 --name fedora-toolbox-37
 ./bits/distrobox-terminal-profile.sh -n ubuntu-toolbox-22 -c ubuntu-toolbox-22 -s "<Primary><Alt>u" 
-./bits/distrobox-terminal-profile.sh -n fedora-toolbox-36 -c fedora-toolbox-36 -s "<Primary><Alt>f" 
+./bits/distrobox-terminal-profile.sh -n fedora-toolbox-37 -c fedora-toolbox-37 -s "<Primary><Alt>f" 
