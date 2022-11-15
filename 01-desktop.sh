@@ -10,7 +10,6 @@ dconf write /org/gnome/shell/disable-user-extensions "false"
 gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com
 gnome-extensions disable background-logo@fedorahosted.org
 gnome-extensions enable dash-to-dock@micxgx.gmail.com
-gnome-extensions enable sound-output-device-chooser@kgshank.net
 
 dconf write /org/gnome/shell/favorite-apps "['org.mozilla.firefox.desktop', 'org.mozilla.Thunderbird.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Rhythmbox3.desktop', 'org.libreoffice.LibreOffice.writer.desktop', 'org.gnome.Software.desktop', 'yelp.desktop']"
 
