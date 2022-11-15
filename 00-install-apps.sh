@@ -31,7 +31,7 @@ while ! is_ostree_idle; do
     sleep 5
 done
 
-if rpm-ostree override remove firefox > /dev/null; then
+if rpm-ostree override remove firefox firefox-langpacks > /dev/null; then
     echo "Removed Firefox from base layer."
 fi
 
