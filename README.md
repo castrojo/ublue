@@ -29,7 +29,7 @@ If you want a more in depth view of what's happening I encourage you to take thi
 After installing all the components, you will get:
 
 - A Fedora Silverblue installation with an Ubuntu style desktop
-  - Works on Fedora Silverblue 35 and 36
+  - Works on Fedora Silverblue 37 (Use an older release for 36)
 - Fedora and Ubuntu userspaces provided by [distrobox](https://github.com/89luca89/distrobox)
   - Ctrl-alt-t will open a host terminal. (Use this for rpm-ostree and flatpak operations)
   - Ctrl-alt-u will open an Ubuntu container. (Use this for every day usage)
